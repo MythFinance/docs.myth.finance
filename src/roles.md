@@ -4,7 +4,7 @@ The dualSTAKE smart contract has a number of privileged roles that can perform a
 
 ## Admin
 
-A multisig account controlled by the Myth Finance core team.
+A multisig account controlled by the core team.
 
 Can perform the following actions:
 
@@ -16,7 +16,7 @@ Can perform the following actions:
 
 ## Fee Admin
 
-A lower-security account controlled by the Myth Finance core team.
+A lower-security account controlled by the core team.
 
 Can perform the following actions:
 
