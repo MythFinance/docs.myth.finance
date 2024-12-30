@@ -355,7 +355,7 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="roles"><a class="header" href="#roles">Roles</a></h1>
 <p>The dualSTAKE smart contract has a number of privileged roles that can perform authorized actions:</p>
 <h2 id="admin"><a class="header" href="#admin">Admin</a></h2>
-<p>A multisig account controlled by the Myth Finance core team.</p>
+<p>A multisig account controlled by the core team.</p>
 <p>Can perform the following actions:</p>
 <ul>
 <li>Queue smart contract upgrade</li>
@@ -365,7 +365,7 @@
 <li>Change <code>fee admin</code> role address (shared with the <code>fee admin</code> role)</li>
 </ul>
 <h2 id="fee-admin"><a class="header" href="#fee-admin">Fee Admin</a></h2>
-<p>A lower-security account controlled by the Myth Finance core team.</p>
+<p>A lower-security account controlled by the core team.</p>
 <p>Can perform the following actions:</p>
 <ul>
 <li>Execute vested smart contract upgrade (shared with <code>admin</code> role)</li>
@@ -694,22 +694,6 @@
 
         </div>
 
-        <!-- Livereload script (if served using the cli tool) -->
-        <script>
-            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
-            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
-            const socket = new WebSocket(wsAddress);
-            socket.onmessage = function (event) {
-                if (event.data === "reload") {
-                    socket.close();
-                    location.reload();
-                }
-            };
-
-            window.onbeforeunload = function() {
-                socket.close();
-            }
-        </script>
 
 
 
