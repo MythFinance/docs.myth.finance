@@ -19,7 +19,7 @@ Users wishing to protest a proposed upgrade can lock up their LST tokens on the 
 For the platform operator to upgrade the code, they must first "dissolve" all protesting user tokens:
 
 - redeem the tokens
-- send them their ALGO+ASA equivalent to the user that deposited them
+- send them their `ALGO`+ASA equivalent to the user that deposited them
 
 _Note: when dissolving protesting stake, funds flow from the contract to the user directly, without intermediation by the platform operator._
 

@@ -27,12 +27,12 @@ Assuming these hypothetical fees:
 - Platform fee rate: 2.0% 
 - Node operator fee rate: 3.0% 
 
-Then a staking reward disbursement of 10.5 ALGO would be allocated as such:
+Then a staking reward disbursement of 10.5 `ALGO` would be allocated as such:
 
-- Staking rewards deposited: 10.5 ALGO
-- Platform fee: 0.21 ALGO
-- Node operator fee: 0.315 ALGO
-- Net amount to be swapped into ASA: 9.975 ALGO
+- Staking rewards deposited: 10.5 `ALGO`
+- Platform fee: 0.21 `ALGO`
+- Node operator fee: 0.315 `ALGO`
+- Net amount to be swapped into ASA: 9.975 `ALGO`
 
 ## Withdraw model
 

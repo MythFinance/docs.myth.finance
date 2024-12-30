@@ -224,7 +224,7 @@
 <p>Between points 1 and 2, the dualSTAKE contract would receive staking rewards from block production, which are immediately <a href="./rewards.html">swapped</a> into the paired ASA, thus appreciating <code>oraALGO</code> against <code>ORA</code>. The amount of staked <code>ALGO</code> remains constant.</p>
 <p>Read more about <a href="./mint.html">minting</a> or navigate to a specific section using the menu.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="minting"><a class="header" href="#minting">Minting</a></h1>
-<p>Users can mint dualSTAKE tokens by depositing ALGO and the paired ASA into the smart contract.</p>
+<p>Users can mint dualSTAKE tokens by depositing <code>ALGO</code> and the paired ASA into the smart contract.</p>
 <p>Using <code>oraALGO</code> as an example, a user would mint by providing <code>ALGO</code> at 1:1 and <code>ORA</code> at the current <a href="./rate.html">exchange rate</a>.</p>
 <p>In exchange, they receive an equal amount of <code>oraALGO</code> tokens to the <code>ALGO</code> they deposited.</p>
 <p><em>E.g. If <code>oraALGO</code> is at 10:1 with <code>ORA</code>, the user would deposit 10 <code>ALGO</code> + 1 <code>ORA</code> to receive 10 <code>oraALGO</code> tokens.</em></p>
@@ -235,9 +235,9 @@
 <p>dualSTAKE smart contracts delegate their escrow account to node runners, who participate in Algorand consensus on the contract's behalf.</p>
 <p>As blocks are proposed by the node runner:</p>
 <ul>
-<li>The Algorand protocol distributes ALGO rewards into the smart contract escrow account</li>
-<li>The ALGO rewards are swapped into the ASA (e.g. $ORA) through a pre-configured AMM pool (e.g. Tinyman v2 ALGO/$ORA)</li>
-<li>The dualSTAKE token (e.g. $oraALGO) appreciates against the paired ASA (e.g. $ORA)</li>
+<li>The Algorand protocol distributes <code>ALGO</code> rewards into the smart contract escrow account</li>
+<li>The <code>ALGO</code> rewards are swapped into the ASA (e.g. <code>ORA</code>) through a pre-configured AMM pool (e.g. Tinyman v2 <code>ALGO/ORA</code>)</li>
+<li>The dualSTAKE token (e.g. <code>oraALGO</code>) appreciates against the paired ASA (e.g. <code>ORA</code>)</li>
 </ul>
 <p><strong>These swaps create buying pressure on the paired token, and serve as a steady cost averaging buy strategy for users.</strong></p>
 <p>Platform and node runner fees are taken from the staking rewards, pre-swap.</p>
@@ -291,12 +291,12 @@
 <li>Platform fee rate: 2.0%</li>
 <li>Node operator fee rate: 3.0%</li>
 </ul>
-<p>Then a staking reward disbursement of 10.5 ALGO would be allocated as such:</p>
+<p>Then a staking reward disbursement of 10.5 <code>ALGO</code> would be allocated as such:</p>
 <ul>
-<li>Staking rewards deposited: 10.5 ALGO</li>
-<li>Platform fee: 0.21 ALGO</li>
-<li>Node operator fee: 0.315 ALGO</li>
-<li>Net amount to be swapped into ASA: 9.975 ALGO</li>
+<li>Staking rewards deposited: 10.5 <code>ALGO</code></li>
+<li>Platform fee: 0.21 <code>ALGO</code></li>
+<li>Node operator fee: 0.315 <code>ALGO</code></li>
+<li>Net amount to be swapped into ASA: 9.975 <code>ALGO</code></li>
 </ul>
 <h2 id="withdraw-model"><a class="header" href="#withdraw-model">Withdraw model</a></h2>
 <p>Platform and node operator fees are not paid immediately. Instead they remain in the contract escrow account until they are withdrawn by the respective operator.</p>
@@ -341,7 +341,7 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="farm-provision"><a class="header" href="#farm-provision">Farm provision</a></h1>
 <p>Ecosystem projects and ASA creators are encouraged to create farms for their dualSTAKE tokens.</p>
 <p>Farms are configured to pay out a specific supplement in ASA along with each staking reward disbursed by the Algorand protocol.</p>
-<p>This extra farming incentive should further incentivize users to deposit their ALGO along with the paired ASA into the community's dualSTAKE token. More ALGO deposited means more blocks produced, means more frequent buying pressure on the token.</p>
+<p>This extra farming incentive should further incentivize users to deposit their <code>ALGO</code> along with the paired ASA into the community's dualSTAKE token. More <code>ALGO</code> deposited means more blocks produced, means more frequent buying pressure on the token.</p>
 <p>As rewards accumulate and are swapped, the exchange rate of the dualSTAKE token to the ASA increases globally for all holders, current and future.</p>
 <p>Minting new dualSTAKE tokens will require more of the ASA as time moves on, which provides a soft-lock utility for tokens making use of this system.</p>
 <h2 id="farming-benefits"><a class="header" href="#farming-benefits">Farming benefits</a></h2>
@@ -417,7 +417,7 @@
 <p>For the platform operator to upgrade the code, they must first "dissolve" all protesting user tokens:</p>
 <ul>
 <li>redeem the tokens</li>
-<li>send them their ALGO+ASA equivalent to the user that deposited them</li>
+<li>send them their <code>ALGO</code>+ASA equivalent to the user that deposited them</li>
 </ul>
 <p><em>Note: when dissolving protesting stake, funds flow from the contract to the user directly, without intermediation by the platform operator.</em></p>
 <p>An upgrade can not take place unless:</p>
