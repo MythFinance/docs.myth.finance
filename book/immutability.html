@@ -208,7 +208,7 @@
 </li>
 </ul>
 <h3 id="platform-and-node-operator-fee-rates"><a class="header" href="#platform-and-node-operator-fee-rates">Platform and Node operator Fee Rates</a></h3>
-<p>The platform fee rate value <code>pltbps</code> and noderunner fee rate value <code>nodbps</code> will be mutable with by the platform operator, 1 week delay before applicablity.</p>
+<p>The platform fee rate value <code>pltbps</code> and node runner fee rate value <code>nodbps</code> will be mutable with by the platform operator, 1 week delay before applicability.</p>
 <p>Additionally, the updated fee rate value must be within 500 basis points of the previous one (up to +/- 5% rate change at a time)</p>
 <h3 id="changing-scheduled-updates"><a class="header" href="#changing-scheduled-updates">Changing scheduled updates</a></h3>
 <p>If an update is issued while a previous update is scheduled, the timer will reset to the initial value of 1 week.</p>
@@ -225,9 +225,9 @@
 <p>The admin address <code>admin</code> will be mutable by the <code>admin</code> role with immediate effect. Changing admin requires two transactions in an atomic group, one from the current admin and one from the future admin. This aims to eliminate the possibility of operator error.</p>
 <h3 id="fee-admin"><a class="header" href="#fee-admin">Fee admin</a></h3>
 <p>The fee admin address <code>fee_admin</code> will be mutable by the <code>admin</code> and <code>fee_admin</code> roles with immediate effect.</p>
-<h3 id="noderunner"><a class="header" href="#noderunner">Noderunner</a></h3>
+<h3 id="node-runner"><a class="header" href="#node-runner">Node runner</a></h3>
 <p>The node runner address <code>noderunner</code> will be mutable by the <code>noderunner</code> and <code>fee_admin</code> roles with immediate effect.</p>
-<p>Changing the noderunner address requires withdrawing noderunner fees. This prevents the fee admin role from subverting the node runner fees.</p>
+<p>Changing the node runner address requires withdrawing node runner fees. This prevents the fee admin role from subverting the node runner fees.</p>
 
                     </main>
 

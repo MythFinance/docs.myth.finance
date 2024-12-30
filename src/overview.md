@@ -26,6 +26,6 @@ Read more about [how it works](/how-it-works.html) or navigate to a specific sec
 
 ---
 
-Supported ASA Tokens at launch (full list TBD): ORA, COOP
+Supported ASA Tokens at launch (full list TBD): MONKO, COOP, ORA, maybe your token
 
 Development status: In Review

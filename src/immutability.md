@@ -42,7 +42,7 @@ The "fee admin" role will be able to change the fee rates:
 
 ### Platform and Node operator Fee Rates
 
-The platform fee rate value `pltbps` and noderunner fee rate value `nodbps` will be mutable with by the platform operator, 1 week delay before applicablity.
+The platform fee rate value `pltbps` and node runner fee rate value `nodbps` will be mutable with by the platform operator, 1 week delay before applicability.
 
 Additionally, the updated fee rate value must be within 500 basis points of the previous one (up to +/- 5% rate change at a time)
 
@@ -73,9 +73,9 @@ The admin address `admin` will be mutable by the `admin` role with immediate eff
 
 The fee admin address `fee_admin` will be mutable by the `admin` and `fee_admin` roles with immediate effect.
 
-### Noderunner
+### Node runner
 
 The node runner address `noderunner` will be mutable by the `noderunner` and `fee_admin` roles with immediate effect.
 
-Changing the noderunner address requires withdrawing noderunner fees. This prevents the fee admin role from subverting the node runner fees.
+Changing the node runner address requires withdrawing node runner fees. This prevents the fee admin role from subverting the node runner fees.
 

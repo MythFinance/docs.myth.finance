@@ -16,4 +16,4 @@ A number of preconditions must be met to ensure that the protocol functions as e
   - A non-zero initial exchange rate is supported, but should only be used in case of significant farming provision
 - Asset information
   - Asset unit names are currently chosen manually.
-  - The AVM restricts this field to 8 characters maximum length, requiring flexibility in naming dualSTAKE units for assets with longer names (e.g. $MONKO)
+  - The AVM restricts this field to 8 characters maximum length, requiring flexibility in naming dualSTAKE units for assets with longer names (e.g. `$MONKO`)

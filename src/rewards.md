@@ -1,8 +1,8 @@
 # Staking Rewards
 
-dualSTAKE smart contracts delegate their escrow account to node runners, who participate in Algorand consensus on the contract's behalf.
+A dualSTAKE smart contract delegates its escrow account's voting power to a node runner, in order for them to participate in consensus on its behalf.
 
-As blocks are proposed by the node runner:
+As blocks are proposed by the node:
 
 - The Algorand protocol distributes `ALGO` rewards into the smart contract escrow account
 - The `ALGO` rewards are swapped into the ASA (e.g. `ORA`) through a pre-configured AMM pool (e.g. Tinyman v2 `ALGO/ORA`)
@@ -12,4 +12,9 @@ As blocks are proposed by the node runner:
 
 Platform and node runner fees are taken from the staking rewards, pre-swap.
 
-Our backend systems will call the contract to perform the `ALGO`-`ASA` swap whenever a block is produced, but it is also happens automatically before minting or redeeming dualSTAKE tokens. This way, even if our backend systems lag behind or are offline, you can be sure that you are receiving the correct rate of dualSTAKE:ASA.
+Swapping is triggered in one of two ways:
+
+- Our backend systems will call the contract to perform the `ALGO`-`ASA` swap whenever a block is produced
+- Automatically before minting or redeeming dualSTAKE tokens
+
+This way, even if our backend systems lag behind or are offline, you can be sure that the dualSTAKE exchange rate is correct.

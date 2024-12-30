@@ -12,7 +12,7 @@ Where:
 
 - `Paired Asset Balance` refers to the amount of the paired ASA held by the smart contract
 - `Staked ALGO` refers to the `ALGO` deposited by users
-  - Not including accumulated platforn or node runner fees
+  - Not including accumulated platform or node runner fees
 
 ## Example
 

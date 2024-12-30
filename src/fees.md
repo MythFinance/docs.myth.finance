@@ -14,11 +14,11 @@ The percentage is configurable throughout the lifetime of the contract, and can 
 
 There are mechanisms in place to protects dualSTAKE users from the operator changing platform fees abruptly, see [Immutability - Fee Rate](/immutability.html#platform-and-node-operator-fee-rates).
 
-## Noderunner fees
+## Node runner fees
 
 The node operator is allocated some fees on each rewards distribution. As above, this is expressed in basis points under the `nodbps` global storage field, and the same [update mechanism](/immutability.html#fee-rate) applies.
 
-The initial noderunner fee will be `300` bps, or `3%`.
+The initial node runner fee will be `300` bps, or `3%`.
 
 ## Example fee allocation from reward disbursement
 
