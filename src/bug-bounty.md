@@ -1,3 +1,0 @@
-# Bug Bounty
-
-TBD
