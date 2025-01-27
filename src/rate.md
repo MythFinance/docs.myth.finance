@@ -6,11 +6,12 @@ Minting dualSTAKE tokens will require the equivalent amounts of both tokens, and
 
 The formula to determine the exchange rate of the dualSTAKE token to the paired assets is:
 
-\\[1\ dualSTAKE=1\ ALGO+\frac{Paired\ Asset\ Balance}{Staked\ ALGO}ASA\\]
+\\[1\ dsALGO=1\ ALGO+\frac{Paired\ ASA\ Balance}{Staked\ ALGO}ASA\\]
 
 Where:
 
-- `Paired Asset Balance` refers to the amount of the paired ASA held by the smart contract
+- `dsALGO` refers to a specific dualSTAKE token, e.g. `oraALGO`
+- `Paired ASA Balance` refers to the amount of the paired ASA held by the smart contract, e.g. 300 `ORA`
 - `Staked ALGO` refers to the `ALGO` deposited by users
   - Not including accumulated platform or node runner fees
 

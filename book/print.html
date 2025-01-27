@@ -258,10 +258,11 @@
 <p>dualSTAKE tokens are backed by <code>ALGO</code> and their paired asset, with a different exchange rate for each.</p>
 <p>Minting dualSTAKE tokens will require the equivalent amounts of both tokens, and similarly redeeming will yield the equivalent amounts of both tokens.</p>
 <p>The formula to determine the exchange rate of the dualSTAKE token to the paired assets is:</p>
-<p>\[1\ dualSTAKE=1\ ALGO+\frac{Paired\ Asset\ Balance}{Staked\ ALGO}ASA\]</p>
+<p>\[1\ dsALGO=1\ ALGO+\frac{Paired\ ASA\ Balance}{Staked\ ALGO}ASA\]</p>
 <p>Where:</p>
 <ul>
-<li><code>Paired Asset Balance</code> refers to the amount of the paired ASA held by the smart contract</li>
+<li><code>dsALGO</code> refers to a specific dualSTAKE token, e.g. <code>oraALGO</code></li>
+<li><code>Paired ASA Balance</code> refers to the amount of the paired ASA held by the smart contract, e.g. 300 <code>ORA</code></li>
 <li><code>Staked ALGO</code> refers to the <code>ALGO</code> deposited by users
 <ul>
 <li>Not including accumulated platform or node runner fees</li>
