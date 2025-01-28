@@ -1,7 +1,64 @@
-<html>
+<!doctype html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Title</title>
+    <link rel="stylesheet" href="dualSTAKE/css/variables.css">
+    <link rel="stylesheet" href="dualSTAKE/css/general.css">
+    <link rel="stylesheet" href="dualSTAKE/css/chrome.css">
+    <link rel="stylesheet" href="dualSTAKE/css/print.css" media="print">
+    <link rel="stylesheet" href="dualSTAKE/FontAwesome/css/font-awesome.css">
+    <link rel="stylesheet" href="dualSTAKE/fonts/fonts.css">
+    <link rel="stylesheet" href="dualSTAKE/highlight.css">
+    <link rel="stylesheet" href="dualSTAKE/tomorrow-night.css">
+    <link rel="stylesheet" href="dualSTAKE/ayu-highlight.css">
+<style>
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #0f1419;
+  color: rgb(197, 197, 197);
+}
+#logo {
+  margin-top: 2rem;
+}
+a.card {
+  text-decoration: none;
+  justify-content: center;
+  align-items: center;
+  display: block;
+  aspect-ratio: 2.5;
+  display: flex;
+  border-radius: 10px;
+  color: white;
+  font-size: 2rem;
+  padding: 2rem;
+  min-width: 175px;
+  background: rgba(57, 57, 214, 0.2);
+  color: rgb(0, 150, 207);
+  border: 2px rgba(57, 57, 214, 0.4) solid;
+  margin-bottom: 16px;
+}
+a.card:hover {
+  background: rgba(57, 57, 214, 0.3);
+  border: 0px rgb(255, 180, 84) solid;
+  color: rgb(255, 180, 84);
+  padding-left: 3.5rem;
+  padding-right: 3.5rem;
+  transform: scale(1.02);
+  transition: transform 200ms, background 200ms, border 400ms, padding-right 200ms, padding-left 200ms;
+}
+</style>
   </head>
   <body>
-    <a href="dualstake/">dualSTAKE Documentation</a>
+    <img id="logo" src="/myth.opt.svg" width="64" />
+    <h1>Myth Finance</h1>
+    <h2>Documentation</h2>
+    <a class="card" href="dualSTAKE/">dualSTAKE</a>
+    <a class="card" onclick="alert('Coming soon');return false" href="bench/">Bench</a>
+    <a class="card" onclick="alert('Coming later');return false" href="bench/">L.O.R.E.</a>
   </body>
 </html>
