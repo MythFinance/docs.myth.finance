@@ -12,15 +12,15 @@ In a nutshell:
 
 1) dualSTAKE smart contracts **participate in consensus**.
 2) Staking rewards are **swapped** into the paired ASA.
-3) Through these swaps, dualSTAKE tokens **appreciate against the ASA**.
+3) Through these swaps, dualSTAKE tokens **appreciate in the ASA**.
 
 Benefits for users:
 - Stake `ALGO`, get rewarded in your ASA of choice
   - Steady stream of DCA-like buys
 
 Benefits for ASA creators:
-- Leverage community `ALGO` into a steady stream of buying pressure for the ASA
-- Provide utility for the ASA via the dualSTAKE token soft-lock
+- Leverage community `ALGO` into a steady stream of buying pressure for your ASA
+- Provide utility for the ASA via the implicit dualSTAKE token soft-lock
 
 Read more about [how it works](/how-it-works.html) or navigate to a specific section using the menu.
 
