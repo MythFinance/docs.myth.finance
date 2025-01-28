@@ -1,0 +1,11 @@
+#!/bin/sh
+
+set -e
+
+echo building 
+
+bash build.sh
+
+git add public
+
+echo OK
