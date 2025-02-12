@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg width="34.396mm" height="13.942mm" version="1.1" viewBox="0 0 34.396 13.942" id="svg10" sodipodi:docname="bench.svg" inkscape:version="1.1.2 (0a00cf5339, 2022-02-04)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+  <defs id="defs14" />
+  <sodipodi:namedview id="namedview12" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1.0" inkscape:pageshadow="2" inkscape:pageopacity="0.0" inkscape:pagecheckerboard="0" inkscape:document-units="mm" showgrid="true" inkscape:zoom="3.0273723" inkscape:cx="66.063894" inkscape:cy="34.022905" inkscape:window-width="1914" inkscape:window-height="1017" inkscape:window-x="3" inkscape:window-y="31" inkscape:window-maximized="1" inkscape:current-layer="svg10">
+    <inkscape:grid type="xygrid" id="grid865" />
+  </sodipodi:namedview>
+  <g id="g1259">
+    <g transform="translate(-5.3742,-98.527667)" fill="currentColor" id="g8">
+      <path d="m 5.3742,98.527667 v 1.322917 h 34.395833 v -1.322917 z" style="-inkscape-stroke:none" id="path2" sodipodi:nodetypes="ccccc" />
+      <path d="M 14.634617,99.850584 7.1441,112.448 h 1.5875 l 7.490517,-12.597416 z" style="-inkscape-stroke:none" id="path4" sodipodi:nodetypes="ccccc" />
+      <path d="m 30.245033,99.850584 h -1.5875 L 36.2481,112.44838 h 1.5875 z" style="-inkscape-stroke:none" id="path6" sodipodi:nodetypes="ccccc" />
+    </g>
+  </g>
+</svg>

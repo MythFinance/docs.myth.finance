@@ -1,0 +1,48 @@
+---
+import {
+  Card,
+  CardHeader,
+  CardTitle,
+  CardDescription,
+  CardContent,
+  CardFooter,
+} from "./ui/card";
+import BenchLogo from "../assets/bench.svg";
+---
+
+<a href="/bench">
+  <Card
+    className="relative group bg-card/80 hover:border-primary hover:scale-105 transition-all text-muted-foreground hover:text-foreground"
+  >
+    <CardHeader>
+      <CardTitle className="text-xl flex gap-1 justify-center">
+        <div class="relative">
+          <span class="">Bench</span>
+          <span
+            class="font-thin text-xs absolute text-muted-foreground left-[100%] ml-[3px]"
+          >
+            beta
+          </span>
+        </div>
+      </CardTitle>
+    </CardHeader>
+    <CardContent
+      className="flex w-full px-12 pb-5 flex-col pt-4 -mt-5 items-center gap-7 text-sm overflow-y-visible"
+    >
+      <div class="flex flex-col items-center">
+        <div
+          class="invisible text-primary/20 group-hover:text-primary/70 text-primary font-thin text-[1.6rem] group-hover:animate-bounce group-hover:visible"
+        >
+          ¥
+        </div>
+        <BenchLogo
+          class="text-primary/20 group-hover:text-primary/70"
+        />
+      </div>
+      <div class="flex-col flex items-center gap-0">
+        <div>Constant price markets</div>
+        <div class="font-light text-muted-foreground">ASA &middot; ALGO</div>
+      </div>
+    </CardContent>
+  </Card>
+</a>
