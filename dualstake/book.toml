@@ -3,10 +3,10 @@ authors = ["Bit D13"]
 language = "en"
 multilingual = false
 src = "src"
-title = "dualSTAKE Documentation :: Algorand Liquid Staking with ASA rewards"
+title = "dualSTAKE Documentation: Algorand Liquid Staking with ASA rewards"
 
 [output.html]
 default-theme = "ayu"
 preferred-dark-theme = "ayu"
-site-url = "https://dualstake-docs.pages.dev"
+site-url = "https://myth.finance"
 mathjax-support = true

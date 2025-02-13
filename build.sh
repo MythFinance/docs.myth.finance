@@ -23,3 +23,8 @@ echo ===============
 
 mdbook build dualstake --dest-dir ../public/dualSTAKE/
 
+echo build bench
+echo ===============
+
+mdbook build bench --dest-dir ../public/bench/
+
