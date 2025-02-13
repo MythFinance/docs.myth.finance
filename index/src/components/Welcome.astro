@@ -1,24 +1,30 @@
 ---
 import Logo from "../assets/myth.svg";
 import Bench from "./Bench.astro";
+import DualStake from "./DualStake.astro";
 ---
 
 <div id="container" class="h-full">
-  <main class="flex flex-col h-full justify-between items-center">
-    <section class="flex flex-col self-start pl-16 pt-16 text-muted-foreground/50 group hover:text-muted-foreground transition-all">
-      <a href="https://myth.finance" class=""
-        >
-		<Logo width="96" height="96" />
-      
-      <h1 class="group-hover:text-muted-foreground transition-all">
-        Myth Finance<br />
-        <span class="text-muted-foreground group-hover:text-muted-foreground/50 transition-all">Documentation</span>
-      </h1>
-	</a>
+  <main class="flex flex-col h-full justify-center items-center">
+    <section
+      class="absolute top-0 left-0 self-start p-12 pb-0 text-muted-foreground/50 group hover:text-muted-foreground transition-all"
+    >
+      <a href="https://myth.finance" class="flex flex-row md:flex-col gap-6 md:gap-4">
+        <Logo width="96" height="96" />
+
+        <h1 class="group-hover:text-muted-foreground transition-all">
+          Myth Finance<br />
+          <span
+            class="text-muted-foreground/50 md:text-muted-foreground group-hover:text-muted-foreground/50 transition-all"
+            >Documentation</span
+          >
+        </h1>
+      </a>
     </section>
 
-    <section class="flex flex-col">
-      <Bench href="/bench" />
+    <section class="flex flex-col md:flex-row gap-6">
+      <DualStake />
+	  <Bench />
     </section>
 
     <div></div>
