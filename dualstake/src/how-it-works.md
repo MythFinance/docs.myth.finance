@@ -16,6 +16,8 @@ A typical user journey with a dualSTAKE token like `oraALGO` would consist of:
 1. [minting](./mint.html) dualSTAKE (e.g. `oraALGO`) by depositing `ALGO` + `ORA`
 2. _(later on)_ [redeeming](./redeem.html) their `oraALGO` dualSTAKE tokens for `ALGO` + more `ORA`.
 
-Between points 1 and 2, the dualSTAKE contract would receive staking rewards from block production, which are immediately [swapped](./rewards.html) into the paired ASA, thus `oraALGO` appreciates against `ORA`. The amount of staked `ALGO` remains constant.
+Between points 1 and 2, the dualSTAKE contract would receive staking rewards from block production, which are immediately [swapped](./rewards.html) into the paired ASA, increasing the `ORA` amount backing each unit of `oraALGO`. The amount of staked `ALGO` remains constant.
+
+dualSTAKE supports [farms](./farming.html), which pay out an additional amount in the paired ASA for each block produced, resulting in a higher APR. Farms are permissionless and can be created or extended by anyone.
 
 Read more about [minting](./mint.html) or navigate to a specific section using the menu.

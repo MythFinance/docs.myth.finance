@@ -1,0 +1,307 @@
+<!DOCTYPE HTML>
+<html lang="en" class="ayu" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Immutability - dualSTAKE Documentation: Algorand Liquid Staking with ASA rewards</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="highlight.css">
+        <link rel="stylesheet" href="tomorrow-night.css">
+        <link rel="stylesheet" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+        <!-- MathJax -->
+        <script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body class="sidebar-visible no-js">
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "ayu" : "ayu";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('ayu')
+            html.classList.add(theme);
+            var body = document.querySelector('body');
+            body.classList.remove('no-js')
+            body.classList.add('js');
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var body = document.querySelector('body');
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            body.classList.remove('sidebar-visible');
+            body.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">dualSTAKE Documentation</li><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">For Users</li><li class="chapter-item expanded "><a href="how-it-works.html"><strong aria-hidden="true">2.</strong> How it Works</a></li><li class="chapter-item expanded "><a href="mint.html"><strong aria-hidden="true">3.</strong> Minting</a></li><li class="chapter-item expanded "><a href="rewards.html"><strong aria-hidden="true">4.</strong> Staking Reward Swapping</a></li><li class="chapter-item expanded "><a href="redeem.html"><strong aria-hidden="true">5.</strong> Redeeming</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="rate.html"><strong aria-hidden="true">6.</strong> Exchange Rate</a></li><li class="chapter-item expanded "><a href="fees.html"><strong aria-hidden="true">7.</strong> Fee Structure</a></li><li class="chapter-item expanded affix "><li class="part-title">For Creators</li><li class="chapter-item expanded "><a href="create.html"><strong aria-hidden="true">8.</strong> Creating dualSTAKE contracts</a></li><li class="chapter-item expanded "><a href="farming.html"><strong aria-hidden="true">9.</strong> Farming</a></li><li class="chapter-item expanded affix "><li class="part-title">For Node Runners</li><li class="chapter-item expanded "><a href="noderunners.html"><strong aria-hidden="true">10.</strong> Running a dualSTAKE node</a></li><li class="chapter-item expanded affix "><li class="part-title">For Developers</li><li class="chapter-item expanded "><a href="ts-sdk.html"><strong aria-hidden="true">11.</strong> Typescript SDK</a></li><li class="chapter-item expanded affix "><li class="part-title">Contract Info</li><li class="chapter-item expanded "><a href="roles.html"><strong aria-hidden="true">12.</strong> Roles</a></li><li class="chapter-item expanded "><a href="immutability.html" class="active"><strong aria-hidden="true">13.</strong> Immutability</a></li><li class="chapter-item expanded "><a href="txn-fees.html"><strong aria-hidden="true">14.</strong> Transaction fees</a></li><li class="chapter-item expanded "><a href="storage.html"><strong aria-hidden="true">15.</strong> Contract Storage</a></li><li class="chapter-item expanded "><a href="abi.html"><strong aria-hidden="true">16.</strong> Contract ABI</a></li><li class="chapter-item expanded affix "><li class="part-title">Audit</li><li class="chapter-item expanded "><a href="audit.html"><strong aria-hidden="true">17.</strong> Audit</a></li><li class="chapter-item expanded affix "><li class="part-title">Misc</li><li class="chapter-item expanded "><a href="links.html"><strong aria-hidden="true">18.</strong> Links</a></li><li class="chapter-item expanded "><a href="contact.html"><strong aria-hidden="true">19.</strong> Contact</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">dualSTAKE Documentation: Algorand Liquid Staking with ASA rewards</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="immutability"><a class="header" href="#immutability">Immutability</a></h1>
+<h2 id="smart-contract-code"><a class="header" href="#smart-contract-code">Smart contract code</a></h2>
+<p>Smart contract code is upgradable with a 2 week time-lock.</p>
+<p>The hashes of the proposed code upgrade will be published in advance for review by the community, along with the contract source code that produces them.</p>
+<p>The smart contract will only accept a code upgrade that matches the published hashes (stored in the contracts' global storage) after the time lock elapses.</p>
+<p>Users who do <em>not</em> want to upgrade the contract may redeem their dualSTAKE tokens, but they can also signal their disagreement without relinquishing their stake by <a href="#protesting-upgrades">"protesting"</a>.</p>
+<h3 id="technical-details"><a class="header" href="#technical-details">Technical details</a></h3>
+<p>Scheduled contract upgrades can be seen in the global storage variable <code>contract_upgrade</code>, which has the following structure:</p>
+<pre><code>0: [4 bytes] timestamp_applicable uint32
+4: [32 bytes] page_1_hash bytes
+36: [32 bytes] page_2_hash bytes
+</code></pre>
+<p>dualSTAKE smart contract code may exceed 4KB, which is the largest value that can be hashed in the AVM. For this reason, the program is hashed in 4KB "pages". When an upgrade takes effect, each 4KB-sized program page is hashed with SHA512/256 and compared against the stored hash in the <code>contract_upgrade</code> storage value. The upgrade is only allowed to take effect if the hashes match.</p>
+<h3 id="protesting-upgrades"><a class="header" href="#protesting-upgrades">Protesting upgrades</a></h3>
+<p>"Protesting" provides users with a way to indicate that a specific upgrade is a deal-breaker for them. Users can lock up their dualSTAKE tokens "in protest", which soft-blocks upgrading the contract.</p>
+<h3 id="how-it-works"><a class="header" href="#how-it-works">How it works</a></h3>
+<p>Users wishing to protest a proposed upgrade can do so by locking up their dualSTAKE tokens on the contract.</p>
+<p><strong>Before a smart contract upgrade can take place, all protesting user tokens must be "dissolved", i.e. redeemed and returned to the protesting users in <code>ALGO</code>+ASA form.</strong></p>
+<p><em>Note: Protesting stake dissolution takes place <strong>before</strong> the upgrade and is enforced by the smart contract code. When dissolving protesting stake, funds flow from the contract to the user directly, without intermediation by the platform operator.</em></p>
+<p>An upgrade can not take place unless:</p>
+<ul>
+<li>2 weeks have elapsed since it was scheduled</li>
+<li>All protesting stake has been dissolved, i.e. redeemed and returned to protesting users</li>
+</ul>
+<p>If enough stake is locked up as protesting, the platform operator may choose to cancel a planned upgrade, in which case the protesting stake will be sent back to users in dualSTAKE form, e.g. <code>oraALGO</code>.</p>
+<p><strong>Note: if protesting users have opted out of the dualSTAKE asset, or the paired asset, these will be delivered to their ARC-59 asset inbox.</strong></p>
+<h2 id="fee-configuration"><a class="header" href="#fee-configuration">Fee Configuration</a></h2>
+<p>Platform and node runner fees are configurable. <strong>Fee increases are time-delayed</strong>, whereas fee decreases take effect immediately.</p>
+<p>The "fee admin" role, controller by the Myth Finance team, will be able to increase the fee rates:</p>
+<ul>
+<li>with a time delay of 2 weeks before effect</li>
+<li>with a <strong>maximum change</strong> of +2.5% from the previous value</li>
+</ul>
+<p>This protects dualSTAKE holders from the Myth Finance team being able to immediately change the fee rate to 100%, which would compromise their rewards.</p>
+<h3 id="platform-and-node-operator-fee-rates"><a class="header" href="#platform-and-node-operator-fee-rates">Platform and Node operator Fee Rates</a></h3>
+<p>Aside from the Myth Finance frontend, fee rates and parameters can be found in duslSTAKE contracts' global state variables.</p>
+<ul>
+<li>Platform fee rate value: <code>platform_fee_bps</code> (in basis points)</li>
+<li>Node runner fee rate value: <code>noderunner_fee_bps</code> (in basis points)</li>
+<li>Maximum change: <code>fee_update_max_delta</code> (in basis points)</li>
+<li>Time-delay duration for fee increases: <code>fee_update_period</code> (in seconds)</li>
+</ul>
+<h3 id="changing-scheduled-updates"><a class="header" href="#changing-scheduled-updates">Changing scheduled updates</a></h3>
+<p>If an update is issued while a previous update is scheduled, the timer will reset.</p>
+<p>Updates can also be staggered, e.g. the platform fee rate and the node runner fee rate values can be part of the same update.</p>
+<p>The update will be applied automatically after the update timestamp elapses, either explicitly by a platform operator, or when the contract is first called to mint or redeem by any user.</p>
+<p>Scheduled updates will be stored as in the <code>next_params_update</code> global storage value.</p>
+<p>The structure of this field is:</p>
+<pre><code>0: [8 bytes] timestamp_applicable uint64
+8: [8 bytes] node_runner_fee_rate uint64
+16: [8 bytes] platform_fee_rate uint64
+</code></pre>
+<h3 id="immediately-updatable-parameters"><a class="header" href="#immediately-updatable-parameters">Immediately updatable parameters</a></h3>
+<h4 id="admin-role-account"><a class="header" href="#admin-role-account">Admin role account</a></h4>
+<p>The admin address <code>admin</code> will be mutable by the <code>admin</code> role with immediate effect. Changing admin requires two transactions in an atomic group, one from the current admin and one from the future admin. This aims to eliminate the possibility of operator error.</p>
+<h4 id="fee-admin"><a class="header" href="#fee-admin">Fee admin</a></h4>
+<p>The fee admin address <code>fee_admin</code> will be mutable by the <code>admin</code> and <code>fee_admin</code> roles with immediate effect.</p>
+<h4 id="node-runner"><a class="header" href="#node-runner">Node runner</a></h4>
+<p>The node runner address <code>noderunner</code> will be mutable by the <code>noderunner</code> and <code>fee_admin</code> roles with immediate effect.</p>
+<p>Changing the node runner address requires withdrawing node runner fees. This prevents the fee admin role from subverting the node runner fees.</p>
+<h4 id="fee-decreases"><a class="header" href="#fee-decreases">Fee Decreases</a></h4>
+<p>Fees can be decreased immediately as described above.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="roles.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="txn-fees.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="roles.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="txn-fees.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

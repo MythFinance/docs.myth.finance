@@ -4,53 +4,70 @@
 
 Smart contract code is upgradable with a 2 week time-lock.
 
-The hashes of the proposed code upgrade will be published in advance for review by the community.
+The hashes of the proposed code upgrade will be published in advance for review by the community, along with the contract source code that produces them.
 
-Users who do _not_ want to upgrade the contract have the option of "protesting".
+The smart contract will only accept a code upgrade that matches the published hashes (stored in the contracts' global storage) after the time lock elapses.
+
+Users who do _not_ want to upgrade the contract may redeem their dualSTAKE tokens, but they can also signal their disagreement without relinquishing their stake by ["protesting"](#protesting-upgrades).
+
+### Technical details 
+
+Scheduled contract upgrades can be seen in the global storage variable `contract_upgrade`, which has the following structure:
+
+```
+0: [4 bytes] timestamp_applicable uint32
+4: [32 bytes] page_1_hash bytes
+36: [32 bytes] page_2_hash bytes
+```
+
+dualSTAKE smart contract code may exceed 4KB, which is the largest value that can be hashed in the AVM. For this reason, the program is hashed in 4KB "pages". When an upgrade takes effect, each 4KB-sized program page is hashed with SHA512/256 and compared against the stored hash in the `contract_upgrade` storage value. The upgrade is only allowed to take effect if the hashes match.
 
 ### Protesting upgrades
 
-"Protesting" provides users with a way to indicate that a specific upgrade is a deal-breaker for them.
+"Protesting" provides users with a way to indicate that a specific upgrade is a deal-breaker for them. Users can lock up their dualSTAKE tokens "in protest", which soft-blocks upgrading the contract.
 
-This is a programmatically enforced exit from the dualSTAKE token, conditional on the upgrade taking place. 
+### How it works
 
-Users wishing to protest a proposed upgrade can lock up their LST tokens on the contract.
+Users wishing to protest a proposed upgrade can do so by locking up their dualSTAKE tokens on the contract.
 
-For the platform operator to upgrade the code, they must first "dissolve" all protesting user tokens:
+**Before a smart contract upgrade can take place, all protesting user tokens must be "dissolved", i.e. redeemed and returned to the protesting users in `ALGO`+ASA form.**
 
-- redeem the tokens
-- send them their `ALGO`+ASA equivalent to the user that deposited them
-
-_Note: when dissolving protesting stake, funds flow from the contract to the user directly, without intermediation by the platform operator._
+_Note: Protesting stake dissolution takes place **before** the upgrade and is enforced by the smart contract code. When dissolving protesting stake, funds flow from the contract to the user directly, without intermediation by the platform operator._
 
 An upgrade can not take place unless:
 
 - 2 weeks have elapsed since it was scheduled
-- All protesting stake has been removed and returned
+- All protesting stake has been dissolved, i.e. redeemed and returned to protesting users
 
-If enough stake is locked up as protesting, the platform operator may choose to cancel a planned upgrade, in which case the protesting stake will be sent back to users as-is, without redemption.
+If enough stake is locked up as protesting, the platform operator may choose to cancel a planned upgrade, in which case the protesting stake will be sent back to users in dualSTAKE form, e.g. `oraALGO`.
+
+**Note: if protesting users have opted out of the dualSTAKE asset, or the paired asset, these will be delivered to their ARC-59 asset inbox.**
 
 ## Fee Configuration
 
-Fee configuration changes to the contract will be time-delayed.
+Platform and node runner fees are configurable. **Fee increases are time-delayed**, whereas fee decreases take effect immediately.
 
-The "fee admin" role will be able to change the fee rates:
+The "fee admin" role, controller by the Myth Finance team, will be able to increase the fee rates:
 
 - with a time delay of 2 weeks before effect
-- with a max change of the fee value of +/- 
-  - As such, the fee admin would not be able to immediately change the fee rate to 100%, which would compromise dualSTAKE holders' rewards.
+- with a **maximum change** of +2.5% from the previous value
+
+This protects dualSTAKE holders from the Myth Finance team being able to immediately change the fee rate to 100%, which would compromise their rewards.
 
 ### Platform and Node operator Fee Rates
 
-The platform fee rate value `pltbps` and node runner fee rate value `nodbps` will be mutable with by the platform operator, 1 week delay before applicability.
+Aside from the Myth Finance frontend, fee rates and parameters can be found in duslSTAKE contracts' global state variables.
 
-Additionally, the updated fee rate value must be within 500 basis points of the previous one (up to +/- 5% rate change at a time)
+- Platform fee rate value: `platform_fee_bps` (in basis points)
+- Node runner fee rate value: `noderunner_fee_bps` (in basis points)
+- Maximum change: `fee_update_max_delta` (in basis points)
+- Time-delay duration for fee increases: `fee_update_period` (in seconds)
 
 ### Changing scheduled updates
 
-If an update is issued while a previous update is scheduled, the timer will reset to the initial value of 1 week.
+If an update is issued while a previous update is scheduled, the timer will reset.
 
-Updates can also be staggered, e.g. the platform fee rate and the node runner fee rate values can be part of the same update. The last update value will reset the timer to 1 week, as before.
+Updates can also be staggered, e.g. the platform fee rate and the node runner fee rate values can be part of the same update.
 
 The update will be applied automatically after the update timestamp elapses, either explicitly by a platform operator, or when the contract is first called to mint or redeem by any user.
 
@@ -59,9 +76,9 @@ Scheduled updates will be stored as in the `next_params_update` global storage v
 The structure of this field is:
 
 ```
-0: [4 bytes] timestamp_applicable uint32
-4: [2 bytes] platform_fee_rate uint16
-6: [4 bytes] node_runner_fee_rate uint16
+0: [8 bytes] timestamp_applicable uint64
+8: [8 bytes] node_runner_fee_rate uint64
+16: [8 bytes] platform_fee_rate uint64
 ```
 ### Immediately updatable parameters
 
@@ -69,13 +86,16 @@ The structure of this field is:
 
 The admin address `admin` will be mutable by the `admin` role with immediate effect. Changing admin requires two transactions in an atomic group, one from the current admin and one from the future admin. This aims to eliminate the possibility of operator error.
 
-### Fee admin
+#### Fee admin
 
 The fee admin address `fee_admin` will be mutable by the `admin` and `fee_admin` roles with immediate effect.
 
-### Node runner
+#### Node runner
 
 The node runner address `noderunner` will be mutable by the `noderunner` and `fee_admin` roles with immediate effect.
 
 Changing the node runner address requires withdrawing node runner fees. This prevents the fee admin role from subverting the node runner fees.
 
+#### Fee Decreases
+
+Fees can be decreased immediately as described above.

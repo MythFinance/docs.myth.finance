@@ -1,5 +1,5 @@
 # Contact
 
-Email: `bit+ds@d13.co`
+Email: `info@myth.finance`
 
-`@d13_co` [on X](https://x.com/d13_co)
+`@Myth_Finance` [on X](https://x.com/Myth_Finance/)

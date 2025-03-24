@@ -176,16 +176,17 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="fee-structure"><a class="header" href="#fee-structure">Fee Structure</a></h1>
-<h2 id="mint--redeem-fees"><a class="header" href="#mint--redeem-fees">Mint &amp; Redeem fees</a></h2>
 <p>Minting &amp; redeeming do not incur any platform fees. The only fees you will be charged during these operations are network transaction fees.</p>
-<p>Fees are instead taken from rewards, before they are swapped to the ASA.</p>
+<p>Instead, fees are taken from consensus rewards, before they are swapped to the ASA.</p>
+<p>The reward fees consist of <strong>platform fees</strong> and <strong>node runner fees</strong>:</p>
 <h2 id="platform-fees"><a class="header" href="#platform-fees">Platform fees</a></h2>
-<p>The platform is allocated some fees on each rewards distribution.</p>
-<p>The percentage is configurable throughout the lifetime of the contract, and can be seen under the global storage key <code>pltbps</code>. This value is basis points, so you can divide by 100 to get the percent fee. The initial value <code>200</code> corresponds to <code>2.0%</code>.</p>
-<p>There are mechanisms in place to protects dualSTAKE users from the operator changing platform fees abruptly, see <a href="/immutability.html#platform-and-node-operator-fee-rates">Immutability - Fee Rate</a>.</p>
+<p>The Myth Finance platform is allocated some fees on each rewards distribution.</p>
+<p>The percentage is configurable throughout the lifetime of the contract, and can be seen under the global storage key <code>platform_fee_bps</code>. This value is basis points, so you can divide by 100 to get the percent fee. The initial value <code>300</code> corresponds to <code>3.0%</code>.</p>
+<p>There are mechanisms in place to protects dualSTAKE users from the operator changing platform fees abruptly, see <a href="./immutability.html#fee-configuration">Immutability - Fee Rate</a>.</p>
 <h2 id="node-runner-fees"><a class="header" href="#node-runner-fees">Node runner fees</a></h2>
-<p>The node operator is allocated some fees on each rewards distribution. As above, this is expressed in basis points under the <code>nodbps</code> global storage field, and the same <a href="/immutability.html#fee-rate">update mechanism</a> applies.</p>
-<p>The initial node runner fee will be <code>300</code> bps, or <code>3%</code>.</p>
+<p>The node operator is allocated some fees on each rewards distribution. As above, this is expressed in basis points under the <code>noderunner_fee_bps</code> global storage field, and the same <a href="./immutability.html#fee-configuration">update mechanism</a> applies.</p>
+<p>The default node runner fee will be <code>400</code> bps, or <code>4%</code>.</p>
+<p>Typically, ASA communities will operate their own nodes, and benefit from these fees. You can read more about node running <a href="./noderunners.html">in this section</a>.</p>
 <h2 id="example-fee-allocation-from-reward-disbursement"><a class="header" href="#example-fee-allocation-from-reward-disbursement">Example fee allocation from reward disbursement</a></h2>
 <p>Assuming these hypothetical fees:</p>
 <ul>

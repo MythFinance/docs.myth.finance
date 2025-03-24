@@ -1,24 +1,26 @@
 # Fee Structure
 
-## Mint & Redeem fees
-
 Minting & redeeming do not incur any platform fees. The only fees you will be charged during these operations are network transaction fees.
 
-Fees are instead taken from rewards, before they are swapped to the ASA.
+Instead, fees are taken from consensus rewards, before they are swapped to the ASA.
+
+The reward fees consist of **platform fees** and **node runner fees**:
 
 ## Platform fees
 
-The platform is allocated some fees on each rewards distribution.
+The Myth Finance platform is allocated some fees on each rewards distribution.
 
-The percentage is configurable throughout the lifetime of the contract, and can be seen under the global storage key `pltbps`. This value is basis points, so you can divide by 100 to get the percent fee. The initial value `200` corresponds to `2.0%`.
+The percentage is configurable throughout the lifetime of the contract, and can be seen under the global storage key `platform_fee_bps`. This value is basis points, so you can divide by 100 to get the percent fee. The initial value `300` corresponds to `3.0%`.
 
-There are mechanisms in place to protects dualSTAKE users from the operator changing platform fees abruptly, see [Immutability - Fee Rate](/immutability.html#platform-and-node-operator-fee-rates).
+There are mechanisms in place to protects dualSTAKE users from the operator changing platform fees abruptly, see [Immutability - Fee Rate](./immutability.html#fee-configuration).
 
 ## Node runner fees
 
-The node operator is allocated some fees on each rewards distribution. As above, this is expressed in basis points under the `nodbps` global storage field, and the same [update mechanism](/immutability.html#fee-rate) applies.
+The node operator is allocated some fees on each rewards distribution. As above, this is expressed in basis points under the `noderunner_fee_bps` global storage field, and the same [update mechanism](./immutability.html#fee-configuration) applies.
 
-The initial node runner fee will be `300` bps, or `3%`.
+The default node runner fee will be `400` bps, or `4%`.
+
+Typically, ASA communities will operate their own nodes, and benefit from these fees. You can read more about node running [in this section](./noderunners.html).
 
 ## Example fee allocation from reward disbursement
 
