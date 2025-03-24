@@ -21,7 +21,7 @@ mv index/dist public
 echo build dualSTAKE
 echo ===============
 
-mdbook build dualstake --dest-dir ../public/dualSTAKE/
+mdbook build dualSTAKE --dest-dir ../public/dualSTAKE/
 
 echo build bench
 echo ===============
