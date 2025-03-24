@@ -22,8 +22,8 @@
 - [Running a dualSTAKE node](./noderunners.md)
 
 # Contract Info
-- [Roles](./roles.md)
 - [Immutability](./immutability.md)
+- [Roles](./roles.md)
 - [Transaction fees](./txn-fees.md)
 - [Contract Storage](./storage.md)
 - [Contract ABI](./abi.md)

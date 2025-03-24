@@ -91,7 +91,7 @@
 
         <nav id="sidebar" class="sidebar" aria-label="Table of contents">
             <div class="sidebar-scrollbox">
-                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">dualSTAKE Documentation</li><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">For Users</li><li class="chapter-item expanded "><a href="how-it-works.html"><strong aria-hidden="true">2.</strong> How it Works</a></li><li class="chapter-item expanded "><a href="mint.html"><strong aria-hidden="true">3.</strong> Minting</a></li><li class="chapter-item expanded "><a href="rewards.html"><strong aria-hidden="true">4.</strong> Staking Reward Swapping</a></li><li class="chapter-item expanded "><a href="redeem.html"><strong aria-hidden="true">5.</strong> Redeeming</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="rate.html"><strong aria-hidden="true">6.</strong> Exchange Rate</a></li><li class="chapter-item expanded "><a href="fees.html"><strong aria-hidden="true">7.</strong> Fee Structure</a></li><li class="chapter-item expanded affix "><li class="part-title">For Creators</li><li class="chapter-item expanded "><a href="create.html"><strong aria-hidden="true">8.</strong> Creating dualSTAKE contracts</a></li><li class="chapter-item expanded "><a href="farming.html"><strong aria-hidden="true">9.</strong> Farming</a></li><li class="chapter-item expanded affix "><li class="part-title">For Node Runners</li><li class="chapter-item expanded "><a href="noderunners.html"><strong aria-hidden="true">10.</strong> Running a dualSTAKE node</a></li><li class="chapter-item expanded affix "><li class="part-title">Contract Info</li><li class="chapter-item expanded "><a href="roles.html"><strong aria-hidden="true">11.</strong> Roles</a></li><li class="chapter-item expanded "><a href="immutability.html"><strong aria-hidden="true">12.</strong> Immutability</a></li><li class="chapter-item expanded "><a href="txn-fees.html"><strong aria-hidden="true">13.</strong> Transaction fees</a></li><li class="chapter-item expanded "><a href="storage.html"><strong aria-hidden="true">14.</strong> Contract Storage</a></li><li class="chapter-item expanded "><a href="abi.html"><strong aria-hidden="true">15.</strong> Contract ABI</a></li><li class="chapter-item expanded affix "><li class="part-title">For Developers</li><li class="chapter-item expanded "><a href="ts-sdk.html"><strong aria-hidden="true">16.</strong> Typescript SDK</a></li><li class="chapter-item expanded affix "><li class="part-title">Audit</li><li class="chapter-item expanded "><a href="audit.html"><strong aria-hidden="true">17.</strong> Audit</a></li><li class="chapter-item expanded affix "><li class="part-title">Misc</li><li class="chapter-item expanded "><a href="links.html"><strong aria-hidden="true">18.</strong> Links</a></li><li class="chapter-item expanded "><a href="contact.html"><strong aria-hidden="true">19.</strong> Contact</a></li></ol>
+                <ol class="chapter"><li class="chapter-item expanded affix "><li class="part-title">dualSTAKE Documentation</li><li class="chapter-item expanded "><a href="overview.html"><strong aria-hidden="true">1.</strong> Overview</a></li><li class="chapter-item expanded affix "><li class="part-title">For Users</li><li class="chapter-item expanded "><a href="how-it-works.html"><strong aria-hidden="true">2.</strong> How it Works</a></li><li class="chapter-item expanded "><a href="mint.html"><strong aria-hidden="true">3.</strong> Minting</a></li><li class="chapter-item expanded "><a href="rewards.html"><strong aria-hidden="true">4.</strong> Staking Reward Swapping</a></li><li class="chapter-item expanded "><a href="redeem.html"><strong aria-hidden="true">5.</strong> Redeeming</a></li><li class="chapter-item expanded affix "><li class="part-title">Technical</li><li class="chapter-item expanded "><a href="rate.html"><strong aria-hidden="true">6.</strong> Exchange Rate</a></li><li class="chapter-item expanded "><a href="fees.html"><strong aria-hidden="true">7.</strong> Fee Structure</a></li><li class="chapter-item expanded affix "><li class="part-title">For Creators</li><li class="chapter-item expanded "><a href="create.html"><strong aria-hidden="true">8.</strong> Creating dualSTAKE contracts</a></li><li class="chapter-item expanded "><a href="farming.html"><strong aria-hidden="true">9.</strong> Farming</a></li><li class="chapter-item expanded affix "><li class="part-title">For Node Runners</li><li class="chapter-item expanded "><a href="noderunners.html"><strong aria-hidden="true">10.</strong> Running a dualSTAKE node</a></li><li class="chapter-item expanded affix "><li class="part-title">Contract Info</li><li class="chapter-item expanded "><a href="immutability.html"><strong aria-hidden="true">11.</strong> Immutability</a></li><li class="chapter-item expanded "><a href="roles.html"><strong aria-hidden="true">12.</strong> Roles</a></li><li class="chapter-item expanded "><a href="txn-fees.html"><strong aria-hidden="true">13.</strong> Transaction fees</a></li><li class="chapter-item expanded "><a href="storage.html"><strong aria-hidden="true">14.</strong> Contract Storage</a></li><li class="chapter-item expanded "><a href="abi.html"><strong aria-hidden="true">15.</strong> Contract ABI</a></li><li class="chapter-item expanded affix "><li class="part-title">For Developers</li><li class="chapter-item expanded "><a href="ts-sdk.html"><strong aria-hidden="true">16.</strong> Typescript SDK</a></li><li class="chapter-item expanded affix "><li class="part-title">Audit</li><li class="chapter-item expanded "><a href="audit.html"><strong aria-hidden="true">17.</strong> Audit</a></li><li class="chapter-item expanded affix "><li class="part-title">Misc</li><li class="chapter-item expanded "><a href="links.html"><strong aria-hidden="true">18.</strong> Links</a></li><li class="chapter-item expanded "><a href="contact.html"><strong aria-hidden="true">19.</strong> Contact</a></li></ol>
             </div>
             <div id="sidebar-resize-handle" class="sidebar-resize-handle">
                 <div class="sidebar-resize-indicator"></div>
@@ -392,59 +392,6 @@
 <p>In the future, we intend to develop monitoring for node runners' consensus participation. If a node is not participating properly over an extended period of time, a Myth node will be temporarily allocated to the dualSTAKE pool (without changing the node runner fees/manager account)</p>
 <p>The node runner must then restore their node to proper operation and issue a new key registration with their keys to take back control from the myth finance backup node.</p>
 <p>If they fail to restore in good time, the node runner account will be changed on the contract to a new runner. Accrued fees will be distributed to the node runner before this change.</p>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="roles"><a class="header" href="#roles">Roles</a></h1>
-<p>The dualSTAKE smart contract has a number of privileged roles that can perform authorized actions:</p>
-<h2 id="admin"><a class="header" href="#admin">Admin</a></h2>
-<p>A multisig account controlled by the core team.</p>
-<p>Can perform the following actions:</p>
-<ul>
-<li>Queue smart contract upgrade</li>
-<li>Execute vested smart contract upgrade (shared with <code>fee admin</code> role)</li>
-<li>Cancel smart contract upgrade (shared with the <code>fee admin</code> role)</li>
-<li>Change <code>admin</code> role address</li>
-<li>Change <code>fee admin</code> role address (shared with the <code>fee admin</code> role)</li>
-</ul>
-<h2 id="fee-admin"><a class="header" href="#fee-admin">Fee Admin</a></h2>
-<p>A lower-security account controlled by the core team.</p>
-<p>Can perform the following actions:</p>
-<ul>
-<li>Execute vested smart contract upgrade (shared with <code>admin</code> role)</li>
-<li>Cancel smart contract upgrade (shared with the <code>admin</code> role)</li>
-<li>Change <code>fee admin</code> role address (shared with the <code>admin</code> role)</li>
-<li>Queue fee update</li>
-<li>Cancel queued fee update</li>
-<li>Withdraw platform fees</li>
-<li>Withdraw node runner fees to node runner address (shared with <code>node runner</code> role)</li>
-<li>Perform keyreg online transaction (shared with <code>node runner</code> role)</li>
-<li>Perform keyreg offline transaction (shared with <code>node runner</code> role)</li>
-<li>Change node runner address (shared with <code>node runner</code> role)
-<ul>
-<li>Condition: node runner fees must be withdrawn</li>
-</ul>
-</li>
-<li>Dissolve protesting stake
-<ul>
-<li>In order to execute a protested upgrade</li>
-</ul>
-</li>
-<li>Return protesting stake
-<ul>
-<li>After a protested upgrade is cancelled</li>
-</ul>
-</li>
-</ul>
-<h2 id="node-runner"><a class="header" href="#node-runner">Node runner</a></h2>
-<p>Account controlled by node runner. Used to withdraw fees and manage key registrations.</p>
-<ul>
-<li>Change node runner address (shared with <code>fee admin</code> role)
-<ul>
-<li>Condition: node runner fees must be withdrawn</li>
-</ul>
-</li>
-<li>Withdraw node runner fees (shared with <code>fee admin</code> role)</li>
-<li>Perform keyreg online transaction (shared with <code>fee admin</code> role)</li>
-<li>Perform keyreg offline transaction (shared with <code>fee admin</code> role)</li>
-</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="immutability"><a class="header" href="#immutability">Immutability</a></h1>
 <h2 id="smart-contract-code"><a class="header" href="#smart-contract-code">Smart contract code</a></h2>
 <p>Smart contract code is upgradable with a 2 week time-lock.</p>
@@ -500,13 +447,66 @@
 <h3 id="immediately-updatable-parameters"><a class="header" href="#immediately-updatable-parameters">Immediately updatable parameters</a></h3>
 <h4 id="admin-role-account"><a class="header" href="#admin-role-account">Admin role account</a></h4>
 <p>The admin address <code>admin</code> will be mutable by the <code>admin</code> role with immediate effect. Changing admin requires two transactions in an atomic group, one from the current admin and one from the future admin. This aims to eliminate the possibility of operator error.</p>
-<h4 id="fee-admin-1"><a class="header" href="#fee-admin-1">Fee admin</a></h4>
+<h4 id="fee-admin"><a class="header" href="#fee-admin">Fee admin</a></h4>
 <p>The fee admin address <code>fee_admin</code> will be mutable by the <code>admin</code> and <code>fee_admin</code> roles with immediate effect.</p>
-<h4 id="node-runner-1"><a class="header" href="#node-runner-1">Node runner</a></h4>
+<h4 id="node-runner"><a class="header" href="#node-runner">Node runner</a></h4>
 <p>The node runner address <code>noderunner</code> will be mutable by the <code>noderunner</code> and <code>fee_admin</code> roles with immediate effect.</p>
 <p>Changing the node runner address requires withdrawing node runner fees. This prevents the fee admin role from subverting the node runner fees.</p>
 <h4 id="fee-decreases"><a class="header" href="#fee-decreases">Fee Decreases</a></h4>
 <p>Fees can be decreased immediately as described above.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="roles"><a class="header" href="#roles">Roles</a></h1>
+<p>The dualSTAKE smart contract has a number of privileged roles that can perform authorized actions:</p>
+<h2 id="admin"><a class="header" href="#admin">Admin</a></h2>
+<p>A multisig account controlled by the core team.</p>
+<p>Can perform the following actions:</p>
+<ul>
+<li>Queue smart contract upgrade</li>
+<li>Execute vested smart contract upgrade (shared with <code>fee admin</code> role)</li>
+<li>Cancel smart contract upgrade (shared with the <code>fee admin</code> role)</li>
+<li>Change <code>admin</code> role address</li>
+<li>Change <code>fee admin</code> role address (shared with the <code>fee admin</code> role)</li>
+</ul>
+<h2 id="fee-admin-1"><a class="header" href="#fee-admin-1">Fee Admin</a></h2>
+<p>A lower-security account controlled by the core team.</p>
+<p>Can perform the following actions:</p>
+<ul>
+<li>Execute vested smart contract upgrade (shared with <code>admin</code> role)</li>
+<li>Cancel smart contract upgrade (shared with the <code>admin</code> role)</li>
+<li>Change <code>fee admin</code> role address (shared with the <code>admin</code> role)</li>
+<li>Queue fee update</li>
+<li>Cancel queued fee update</li>
+<li>Withdraw platform fees</li>
+<li>Withdraw node runner fees to node runner address (shared with <code>node runner</code> role)</li>
+<li>Perform keyreg online transaction (shared with <code>node runner</code> role)</li>
+<li>Perform keyreg offline transaction (shared with <code>node runner</code> role)</li>
+<li>Change node runner address (shared with <code>node runner</code> role)
+<ul>
+<li>Condition: node runner fees must be withdrawn</li>
+</ul>
+</li>
+<li>Dissolve protesting stake
+<ul>
+<li>In order to execute a protested upgrade</li>
+</ul>
+</li>
+<li>Return protesting stake
+<ul>
+<li>After a protested upgrade is cancelled</li>
+</ul>
+</li>
+</ul>
+<h2 id="node-runner-1"><a class="header" href="#node-runner-1">Node runner</a></h2>
+<p>Account controlled by node runner. Used to withdraw fees and manage key registrations.</p>
+<ul>
+<li>Change node runner address (shared with <code>fee admin</code> role)
+<ul>
+<li>Condition: node runner fees must be withdrawn</li>
+</ul>
+</li>
+<li>Withdraw node runner fees (shared with <code>fee admin</code> role)</li>
+<li>Perform keyreg online transaction (shared with <code>fee admin</code> role)</li>
+<li>Perform keyreg offline transaction (shared with <code>fee admin</code> role)</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="transaction-fees"><a class="header" href="#transaction-fees">Transaction fees</a></h1>
 <p>Users pay for their own transaction fees, e.g. during minting and redeeming.</p>
 <p>The smart contract pays for its own inner transaction fees when swapping (0.003 <code>ALGO</code>)</p>
