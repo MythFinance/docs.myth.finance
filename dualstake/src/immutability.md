@@ -56,7 +56,7 @@ This protects dualSTAKE holders from the Myth Finance team being able to immedia
 
 ### Platform and Node operator Fee Rates
 
-Aside from the Myth Finance frontend, fee rates and parameters can be found in duslSTAKE contracts' global state variables.
+Aside from the Myth Finance frontend, fee rates and parameters can be found in dualSTAKE contracts' global state variables.
 
 - Platform fee rate value: `platform_fee_bps` (in basis points)
 - Node runner fee rate value: `noderunner_fee_bps` (in basis points)

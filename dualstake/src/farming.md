@@ -6,7 +6,7 @@ Farms are configured to pay out an extra ASA amount for each block produced by d
 
 **As an ASA creator or community, dualSTAKE farms allow you to utilize your ASA treasury into a buying pressure incentive.**
 
-Offering a higher APR compared to vanilla liquid staking offerings incentivizes users to stake their `ALGO` along with the paired ASA into your community's dualSTAKE token. More `ALGO` deposited means more blocks produced, which in turn produces more buying pressure on your ASA.
+Offering a higher APR compared to vanilla liquid staking offerings incentivizes users to stake their `ALGO` on your community's dualSTAKE token. More `ALGO` deposited means more blocks produced, which in turn produces more buying pressure on your ASA.
 
 As rewards accumulate and are swapped, the exchange rate of the dualSTAKE token to the ASA increases globally for all holders, current and future.
 

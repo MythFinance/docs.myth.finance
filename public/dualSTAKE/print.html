@@ -361,7 +361,7 @@
 </blockquote>
 <p>Farms are configured to pay out an extra ASA amount for each block produced by dualSTAKE contracts.</p>
 <p><strong>As an ASA creator or community, dualSTAKE farms allow you to utilize your ASA treasury into a buying pressure incentive.</strong></p>
-<p>Offering a higher APR compared to vanilla liquid staking offerings incentivizes users to stake their <code>ALGO</code> along with the paired ASA into your community's dualSTAKE token. More <code>ALGO</code> deposited means more blocks produced, which in turn produces more buying pressure on your ASA.</p>
+<p>Offering a higher APR compared to vanilla liquid staking offerings incentivizes users to stake their <code>ALGO</code> on your community's dualSTAKE token. More <code>ALGO</code> deposited means more blocks produced, which in turn produces more buying pressure on your ASA.</p>
 <p>As rewards accumulate and are swapped, the exchange rate of the dualSTAKE token to the ASA increases globally for all holders, current and future.</p>
 <p>As a secondary benefit, minting new dualSTAKE tokens will require more of the ASA as time moves on, which provides a <strong>soft-lock utility for tokens making use of this system.</strong></p>
 <ul>
@@ -376,19 +376,19 @@
 </ol>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="running-a-dualstake-node"><a class="header" href="#running-a-dualstake-node">Running a dualSTAKE node</a></h1>
 <p>dualSTAKE contracts currently operate with a single escrow account. A node runner is appointed to participate on behalf of dualSTAKE by the ASA leadership or Myth Finance.</p>
-<p>Noderunners accrue fees from rewards, in ALGO. Fees can withdrawn at any time.</p>
+<p>Node runners accrue fees from rewards, in ALGO. Fees can withdrawn at any time.</p>
 <p>The node runner account can:</p>
 <ul>
 <li>change the participation keys of the contract, as well as the online/offline state.</li>
-<li>change the noderunner account to another address</li>
-<li>withdraw accrued noderunner fees</li>
+<li>change the node runner account to another address</li>
+<li>withdraw accrued node runner fees</li>
 </ul>
 <p>The "fee admin" role held by Myth Finance can also perform these actions.</p>
 <p><em>Note: at launch, myth nodes may run the dualSTAKE contracts for a brief period, until the web interface for node management is complete.</em></p>
 <h2 id="roadmap-feature-monitoring--intervention"><a class="header" href="#roadmap-feature-monitoring--intervention">Roadmap feature: Monitoring &amp; Intervention</a></h2>
-<p>In the future, we intend to develop monitoring for node runners' consensus participation. If a node is not participating properly over an extended period of time, a Myth node will be temporarily allocated to the dualSTAKE pool (without changing the noderunner fees/manager account)</p>
+<p>In the future, we intend to develop monitoring for node runners' consensus participation. If a node is not participating properly over an extended period of time, a Myth node will be temporarily allocated to the dualSTAKE pool (without changing the node runner fees/manager account)</p>
 <p>The node runner must then restore their node to proper operation and issue a new key registration with their keys to take back control from the myth finance backup node.</p>
-<p>If they fail to restore in good time, the noderunner account will be changed on the contract to a new runner. Accrued fees will be distributed to the node runner before this change.</p>
+<p>If they fail to restore in good time, the node runner account will be changed on the contract to a new runner. Accrued fees will be distributed to the node runner before this change.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="typescript-sdk"><a class="header" href="#typescript-sdk">Typescript SDK</a></h1>
 <p>Developers can use the published <a href="https://www.npmjs.com/package/@myth-finance/dualstake-ts-sdk">Typescript SDK</a> to interact with dualSTAKE contracts programmatically.</p>
 <p>The SDK has complete support for all operations that the contracts support, including node runner, fee admin and admin operations.</p>
@@ -480,7 +480,7 @@
 </ul>
 <p>This protects dualSTAKE holders from the Myth Finance team being able to immediately change the fee rate to 100%, which would compromise their rewards.</p>
 <h3 id="platform-and-node-operator-fee-rates"><a class="header" href="#platform-and-node-operator-fee-rates">Platform and Node operator Fee Rates</a></h3>
-<p>Aside from the Myth Finance frontend, fee rates and parameters can be found in duslSTAKE contracts' global state variables.</p>
+<p>Aside from the Myth Finance frontend, fee rates and parameters can be found in dualSTAKE contracts' global state variables.</p>
 <ul>
 <li>Platform fee rate value: <code>platform_fee_bps</code> (in basis points)</li>
 <li>Node runner fee rate value: <code>noderunner_fee_bps</code> (in basis points)</li>
@@ -514,212 +514,13 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="contract-storage--immutable-parameters"><a class="header" href="#contract-storage--immutable-parameters">Contract Storage &amp; Immutable parameters</a></h1>
 <p>TBD</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="contract-abi"><a class="header" href="#contract-abi">Contract ABI</a></h1>
-<p><a href="./contract.json">Download</a></p>
-<pre><code>{
-  "name": "dualSTAKE Contract",
-  "methods": [
-    {
-      "name": "register_online",
-      "args": [
-        {
-          "type": "byte[]",
-          "name": "selection_key"
-        },
-        {
-          "type": "byte[]",
-          "name": "voting_key"
-        },
-        {
-          "type": "byte[]",
-          "name": "sp_key"
-        },
-        {
-          "type": "uint64",
-          "name": "first_round"
-        },
-        {
-          "type": "uint64",
-          "name": "last_round"
-        },
-        {
-          "type": "uint64",
-          "name": "key_dilution"
-        }
-      ],
-      "returns": {
-        "type": "void"
-      },
-      "desc": "Fee admin method to send keyreg online for an escrow account"
-    },
-    {
-      "name": "register_offline",
-      "args": [
-        {
-          "type": "address",
-          "name": "address"
-        }
-      ],
-      "returns": {
-        "type": "void"
-      },
-      "desc": "Fee admin method to send keyreg offline for an escrow account"
-    },
-    {
-      "name": "init_storage",
-      "args": [],
-      "returns": {
-        "type": "void"
-      },
-      "desc": "Admin method to init storage. this will be needed as I am reusing an existing app"
-    },
-    {
-      "name": "withdraw_platform_fees",
-      "args": [
-        {
-          "type": "uint64",
-          "name": "amt"
-        }
-      ],
-      "returns": {
-        "type": "void"
-      }
-    },
-    {
-      "name": "mint",
-      "args": [],
-      "returns": {
-        "type": "void"
-      },
-      "desc": "Public method. Mint dualSTAKE lst\nprevious transaction in group must be payment in ALGO if rate != 0, 2 txns before must be payment in ASA if must_swap, swap send dualSTAKE to caller"
-    },
-    {
-      "name": "burn",
-      "args": [],
-      "returns": {
-        "type": "void"
-      }
-    },
-    {
-      "name": "nullun",
-      "args": [],
-      "returns": {
-        "type": "void"
-      },
-      "desc": "Public empty method for opcode budget increase"
-    },
-    {
-      "name": "create_asset",
-      "args": [
-        {
-          "type": "byte[]",
-          "name": "lst_asa_name"
-        },
-        {
-          "type": "byte[]",
-          "name": "lst_unit_name"
-        }
-      ],
-      "returns": {
-        "type": "void"
-      }
-    },
-    {
-      "name": "configure",
-      "args": [
-        {
-          "type": "byte[]",
-          "name": "lst_asa_name"
-        },
-        {
-          "type": "byte[]",
-          "name": "lst_unit_name"
-        },
-        {
-          "type": "uint64",
-          "name": "asa_id"
-        },
-        {
-          "type": "byte[]",
-          "name": "lp_type"
-        },
-        {
-          "type": "byte[]",
-          "name": "lp_id"
-        },
-        {
-          "type": "uint64",
-          "name": "platform_fee_bps"
-        },
-        {
-          "type": "uint64",
-          "name": "noderunner_fee_bps"
-        },
-        {
-          "type": "address",
-          "name": "admin_addr"
-        },
-        {
-          "type": "address",
-          "name": "noderunner_addr"
-        }
-      ],
-      "returns": {
-        "type": "void"
-      }
-    },
-    {
-      "name": "change_admin_1",
-      "args": [
-        {
-          "type": "address",
-          "name": "new_admin"
-        }
-      ],
-      "returns": {
-        "type": "void"
-      }
-    },
-    {
-      "name": "change_admin_2",
-      "args": [],
-      "returns": {
-        "type": "void"
-      }
-    },
-    {
-      "name": "change_noderunner",
-      "args": [
-        {
-          "type": "address",
-          "name": "new_noderunner"
-        }
-      ],
-      "returns": {
-        "type": "void"
-      }
-    },
-    {
-      "name": "change_feeaddr",
-      "args": [
-        {
-          "type": "address",
-          "name": "new_feeaddr"
-        }
-      ],
-      "returns": {
-        "type": "void"
-      }
-    }
-  ],
-  "networks": {}
-}
-</code></pre>
+<p>TBD</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="audit"><a class="header" href="#audit">Audit</a></h1>
 <p>We intend to obtain an informal audit of the smart contracts by experienced AVM developers.</p>
 <p>Furthermore, the dualSTAKE smart contract will be open sourced under a non-permissive license.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="links"><a class="header" href="#links">Links</a></h1>
-<p><a href="https://localhost">Protocol frontend: TBD</a></p>
-<p><a href="https://dualstake-docs.pages.dev">Documentation</a> ⬅ You are here</p>
+<p><a href="https://myth.finance">Protocol frontend</a></p>
+<p><a href="https://docs.myth.finance">Documentation</a> ⬅ You are here</p>
 <hr />
 <p>For contract and token details see <a href="./info.html">Token and Contract Info</a></p>
 <p>For contact details see <a href="./contact.html">Contact</a></p>

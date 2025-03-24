@@ -1,8 +1,8 @@
 # Links
 
-[Protocol frontend: TBD](https://localhost)
+[Protocol frontend](https://myth.finance)
 
-[Documentation](https://dualstake-docs.pages.dev) ⬅ You are here
+[Documentation](https://docs.myth.finance) ⬅ You are here
 
 ---
 
