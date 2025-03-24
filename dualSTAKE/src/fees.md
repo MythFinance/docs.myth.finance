@@ -26,15 +26,15 @@ Typically, ASA communities will operate their own nodes, and benefit from these 
 
 Assuming these hypothetical fees:
 
-- Platform fee rate: 2.0% 
-- Node operator fee rate: 3.0% 
+- Platform fee rate: 3.0% 
+- Node operator fee rate: 4.0% 
 
 Then a staking reward disbursement of 10.5 `ALGO` would be allocated as such:
 
 - Staking rewards deposited: 10.5 `ALGO`
-- Platform fee: 0.21 `ALGO`
-- Node operator fee: 0.315 `ALGO`
-- Net amount to be swapped into ASA: 9.975 `ALGO`
+- Platform fee: 0.315 `ALGO`
+- Node operator fee: 0.42 `ALGO`
+- Net amount to be swapped into ASA: 9.765 `ALGO`
 
 ## Withdraw model
 
@@ -44,4 +44,4 @@ This serves multiple purposes:
 
 - fewer required transaction fees
 - contributing to the voting power of the dualSTAKE escrow address in consensus
-- fewer taxable events for the platform and node runners.
+- fewer taxable events for the platform and node runners
