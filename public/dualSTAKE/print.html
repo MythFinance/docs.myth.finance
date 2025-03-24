@@ -397,7 +397,7 @@
 <p>Smart contract code is upgradable with a 2 week time-lock.</p>
 <p>The hashes of the proposed code upgrade will be published in advance for review by the community, along with the contract source code that produces them.</p>
 <p>The smart contract will only accept a code upgrade that matches the published hashes (stored in the contracts' global storage) after the time lock elapses.</p>
-<p>Users who do <em>not</em> want to upgrade the contract may redeem their dualSTAKE tokens, but they can also signal their disagreement without relinquishing their stake by <a href="immutability.html#protesting-upgrades">"protesting"</a>.</p>
+<p>Users who do <em>not</em> want to upgrade the contract may redeem their dualSTAKE tokens, but they can also signal their disagreement without exiting the system by <a href="immutability.html#protesting-upgrades">"protesting"</a>.</p>
 <h3 id="technical-details"><a class="header" href="#technical-details">Technical details</a></h3>
 <p>Scheduled contract upgrades can be seen in the global storage variable <code>contract_upgrade</code>, which has the following structure:</p>
 <pre><code>0: [4 bytes] timestamp_applicable uint32

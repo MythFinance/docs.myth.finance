@@ -8,7 +8,7 @@ The hashes of the proposed code upgrade will be published in advance for review 
 
 The smart contract will only accept a code upgrade that matches the published hashes (stored in the contracts' global storage) after the time lock elapses.
 
-Users who do _not_ want to upgrade the contract may redeem their dualSTAKE tokens, but they can also signal their disagreement without relinquishing their stake by ["protesting"](#protesting-upgrades).
+Users who do _not_ want to upgrade the contract may redeem their dualSTAKE tokens, but they can also signal their disagreement without exiting the system by ["protesting"](#protesting-upgrades).
 
 ### Technical details 
 
