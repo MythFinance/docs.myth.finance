@@ -28,6 +28,6 @@ Then:
 
 ### Initial ASA exchange rate
 
-Usually, the initial dualSTAKE:ASA exchange rate will be zero, but in some cases a community intending to provide a generous farm may choose to bootstrap a dualSTAKE token with a non-zero exchange rate for their ASA.
+Usually, the initial dualSTAKE:ASA exchange rate will be zero, but in some cases a community intending to provide a generous [farm](./farming.html) may choose to bootstrap a dualSTAKE token with a non-zero exchange rate for their ASA.
 
 This would impose a requirement to deposit some of the asset when minting the dualSTAKE token "at time zero", before rewards have started accumulating.
