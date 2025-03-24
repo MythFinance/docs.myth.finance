@@ -8,5 +8,7 @@ title = "dualSTAKE Documentation: Algorand Liquid Staking with ASA rewards"
 [output.html]
 default-theme = "ayu"
 preferred-dark-theme = "ayu"
-site-url = "https://myth.finance"
+git-repository-url = "https://github.com/myth-finance/docs.myth.finance"
+edit-url-template =  "https://github.com/myth-finance/docs.myth.finance/edit/main/dualSTAKE/{path}"
+site-url = "https://docs.myth.finance/dualSTAKE"
 mathjax-support = true
