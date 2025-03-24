@@ -21,15 +21,15 @@
 # For Node Runners
 - [Running a dualSTAKE node](./noderunners.md)
 
-# For Developers
-- [Typescript SDK](./ts-sdk.md)
-
 # Contract Info
 - [Roles](./roles.md)
 - [Immutability](./immutability.md)
 - [Transaction fees](./txn-fees.md)
 - [Contract Storage](./storage.md)
 - [Contract ABI](./abi.md)
+
+# For Developers
+- [Typescript SDK](./ts-sdk.md)
 
 # Audit
 - [Audit](./audit.md)
