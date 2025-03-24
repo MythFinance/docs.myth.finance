@@ -16,8 +16,8 @@ Scheduled contract upgrades can be seen in the global storage variable `contract
 
 ```
 0: [4 bytes] timestamp_applicable uint32
-4: [32 bytes] page_1_hash bytes
-36: [32 bytes] page_2_hash bytes
+4: [32 bytes] approval_page_1_hash bytes
+36: [32 bytes] approval_page_2_hash bytes
 ```
 
 dualSTAKE smart contract code may exceed 4KB, which is the largest value that can be hashed in the AVM. For this reason, the program is hashed in 4KB "pages". When an upgrade takes effect, each 4KB-sized program page is hashed with SHA512/256 and compared against the stored hash in the `contract_upgrade` storage value. The upgrade is only allowed to take effect if the hashes match.
