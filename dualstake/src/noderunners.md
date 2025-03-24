@@ -15,7 +15,7 @@ _Note: at launch, myth nodes may run the dualSTAKE contracts for a brief period,
 
 ## Roadmap feature: Monitoring & Intervention
 
-Myth Finance will monitor dualSTAKE node runner participation. If a node is not participating properly over an extended period of time, a Myth node will be temporarily allocated to the dualSTAKE pool (without changing the noderunner fees/manager account)
+In the future, we intend to develop monitoring for node runners' consensus participation. If a node is not participating properly over an extended period of time, a Myth node will be temporarily allocated to the dualSTAKE pool (without changing the noderunner fees/manager account)
 
 The node runner must then restore their node to proper operation and issue a new key registration with their keys to take back control from the myth finance backup node.
 
