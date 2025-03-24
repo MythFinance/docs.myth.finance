@@ -6,12 +6,14 @@ Each dualSTAKE token pairs `ALGO` and an ASA into a liquid staking token:
 
 - `gobtcALGO` = `ALGO` + `goBTC`
 - `coopALGO` = `ALGO` + `COOP`
+- `cosgALGO` = `ALGO` + `COSG`
+- etc
 
 In a nutshell:
 
 1) Users **stake** `ALGO` + a paired ASA, receiving dualSTAKE tokens
 2) dualSTAKE smart contracts **participate in consensus**.
-3) ALGO staking rewards are **swapped** into the paired ASA.
+3) ALGO staking rewards are **automatically swapped** into the paired ASA.
 4) Users **redeem** dualSTAKE tokens for 1:1 ALGO, plus rewards in paired ASA form.
 
 Benefits for users:
@@ -24,7 +26,7 @@ Benefits for ASA creators:
 
 Read more about [how it works](./how-it-works.html) or navigate to a specific section using the menu.
 
-dualSTAKE works best when further incentivezed through [dualSTAKE farms]()
+dualSTAKE works best when further incentivized through [dualSTAKE farms](./farming.html)
 
 ---
 
