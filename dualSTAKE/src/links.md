@@ -6,6 +6,4 @@
 
 ---
 
-For contract and token details see [Token and Contract Info](./info.html)
-
 For contact details see [Contact](./contact.html)

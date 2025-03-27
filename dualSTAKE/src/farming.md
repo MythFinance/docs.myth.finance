@@ -2,21 +2,27 @@
 
 > _dualSTAKE farms offer your users a higher overall APR in return for choosing to stake on your dualSTAKE token over other appealing liquid staking options in the ecosystem._
 
-Farms are configured to pay out an extra ASA amount for each block produced by dualSTAKE contracts.
+dualSTAKE farms can be configured to pay out an extra amount of the paired ASA for each block produced by dualSTAKE contracts.
 
-**As an ASA creator or community, dualSTAKE farms allow you to utilize your ASA treasury into a buying pressure incentive.**
+Farms are permissionless, immutable and extendable:
 
-Offering a higher APR compared to vanilla liquid staking offerings incentivizes users to stake their `ALGO` on your community's dualSTAKE token. More `ALGO` deposited means more blocks produced, which in turn produces more buying pressure on your ASA.
+- anyone can set them up
+- once set up, farms can not be cancelled
+- anyone can extend an existing farm by contributing more ASA
 
-As rewards accumulate and are swapped, the exchange rate of the dualSTAKE token to the ASA increases globally for all holders, current and future.
+Farms complete the synergy between your ASA and its dualSTAKE form. Read about the benefits of providing farms below.
 
-As a secondary benefit, minting new dualSTAKE tokens will require more of the ASA as time moves on, which provides a **soft-lock utility for tokens making use of this system.**
-
-- Farms can only pay out in the paired ASA
-- Farms are permissionless. Anyone can set up a farm, or extend an existing farm.
+_Note: Farms only support the paired ASA of each dualSTAKE contract, e.g. `coopALGO` farms can only supplement with `COOP`._
 
 ## Farming benefits
 
-1) increase the APR of your dualSTAKE token, making it more competitive
-2) more ALGO locked ➡ more buying pressure, resulting from swapping rewards
-3) utilize part of your circulating supply as a soft-lock into the dualSTAKE system 
+**As an ASA creator or community, dualSTAKE farms allow you to utilize your ASA treasury into a buying pressure incentive.**
+
+1) increase the APR of your dualSTAKE token, making it more competitive.
+2) more ALGO locked ➡ stronger buying pressure.
+3) provide additional soft-lock utility to your ASA via dualSTAKE
+
+Offering a higher APR compared to competing staking options will incentivize your users to stake their `ALGO` on your community's dualSTAKE token. More `ALGO` staked means more blocks produced, which results in more frequent swaps, producing stronger buying pressure on your ASA.
+
+As rewards accumulate and are swapped, the exchange rate of the dualSTAKE token to the ASA increases globally for all holders, current and future. As a secondary benefit, minting new dualSTAKE tokens will require more of the ASA as time moves on, which provides a **soft-lock utility for tokens making use of this system.**
+

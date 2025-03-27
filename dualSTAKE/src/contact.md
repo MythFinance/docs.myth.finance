@@ -2,4 +2,4 @@
 
 Email: `info@myth.finance`
 
-`@Myth_Finance` [on X](https://x.com/Myth_Finance/)
+[On X]: (https://x.com/Myth_Finance/)`@Myth_Finance`

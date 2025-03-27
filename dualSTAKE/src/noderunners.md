@@ -2,9 +2,11 @@
 
 dualSTAKE contracts currently operate with a single escrow account. A node runner is appointed to participate on behalf of dualSTAKE by the ASA leadership or Myth Finance.
 
-Node runners accrue fees from rewards, in ALGO. Fees can withdrawn at any time.
+ASA communities are expected to operate their nodes and reap the additional rewards:
 
-The node runner account can:
+Node runners accrue fees from rewards, in ALGO. Fees can withdrawn at any time. The default node runner fee is 4%, though this can be configured under [the protocol safeguards](./immutability.html#fee-configuration).
+
+The node runner [account](./roles.html#node-runner) can:
 - change the participation keys of the contract, as well as the online/offline state.
 - change the node runner account to another address
 - withdraw accrued node runner fees

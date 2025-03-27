@@ -1,15 +1,13 @@
 # How it Works
 
-dualSTAKE tokens are named after `ALGO` and the paired ASA.
-
 _For the purposes of this section, we will use `ORA` as the paired dualSTAKE asset._
 
 The `ORA` dualSTAKE token is called `oraALGO`.
 
-- Each `oraALGO` is backed by `ALGO` at a rate of 1:1
-- Each `oraALGO` is backed by an increasing amount of `ORA`
+- Each `oraALGO` unit is backed by `ALGO` at a rate of 1:1
+- Each `oraALGO` unit is backed by an increasing amount of `ORA`
 
-Each dualSTAKE token is managed by a smart contract. Different tokens are managed by independent contracts, without co-mingling.
+`oraALGO` issuance is fully managed by a smart contract. Different tokens are managed by independent contracts, without co-mingling.
 
 A typical user journey with a dualSTAKE token like `oraALGO` would consist of:
 

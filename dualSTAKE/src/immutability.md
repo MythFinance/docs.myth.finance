@@ -8,7 +8,7 @@ The hashes of the proposed code upgrade will be published in advance for review 
 
 The smart contract will only accept a code upgrade that matches the published hashes (stored in the contracts' global storage) after the time lock elapses.
 
-Users who do _not_ want to upgrade the contract may redeem their dualSTAKE tokens, but they can also signal their disagreement without exiting the system by ["protesting"](#protesting-upgrades).
+> Users who do _not_ agree with the contract upgrade can redeem their dualSTAKE tokens immediately, but they can also signal their disagreement without exiting the system by ["protesting" with their stake](./protesting.html).
 
 ### Technical details 
 
@@ -20,28 +20,7 @@ Scheduled contract upgrades can be seen in the global storage variable `contract
 36: [32 bytes] approval_page_2_hash bytes
 ```
 
-dualSTAKE smart contract code may exceed 4KB, which is the largest value that can be hashed in the AVM. For this reason, the program is hashed in 4KB "pages". When an upgrade takes effect, each 4KB-sized program page is hashed with SHA512/256 and compared against the stored hash in the `contract_upgrade` storage value. The upgrade is only allowed to take effect if the hashes match.
-
-### Protesting upgrades
-
-"Protesting" provides users with a way to indicate that a specific upgrade is a deal-breaker for them. Users can lock up their dualSTAKE tokens "in protest", which soft-blocks upgrading the contract.
-
-### How it works
-
-Users wishing to protest a proposed upgrade can do so by locking up their dualSTAKE tokens on the contract.
-
-**Before a smart contract upgrade can take place, all protesting user tokens must be "dissolved", i.e. redeemed and returned to the protesting users in `ALGO`+ASA form.**
-
-_Note: Protesting stake dissolution takes place **before** the upgrade and is enforced by the smart contract code. When dissolving protesting stake, funds flow from the contract to the user directly, without intermediation by the platform operator._
-
-An upgrade can not take place unless:
-
-- 2 weeks have elapsed since it was scheduled
-- All protesting stake has been dissolved, i.e. redeemed and returned to protesting users
-
-If enough stake is locked up as protesting, the platform operator may choose to cancel a planned upgrade, in which case the protesting stake will be sent back to users in dualSTAKE form, e.g. `oraALGO`.
-
-**Note: if protesting users have opted out of the dualSTAKE asset, or the paired asset, these will be delivered to their ARC-59 asset inbox.**
+dualSTAKE smart contract code may exceed 4KB, which is the largest value that can be hashed in the AVM. For this reason, the program is hashed in 4KB "pages". When an upgrade takes effect, each 4KB-sized program page is hashed with SHA512/256 and compared against the stored hash in the `contract_upgrade` storage value. The upgrade is only allowed to take effect if all hashes match.
 
 ## Fee Configuration
 

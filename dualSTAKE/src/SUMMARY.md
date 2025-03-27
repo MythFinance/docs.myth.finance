@@ -9,12 +9,13 @@
 - [Minting](./mint.md)
 - [Staking Reward Swapping](./rewards.md)
 - [Redeeming](./redeem.md)
+- [Protesting Upgrades](./protesting.md)
 
 # Technical
 - [Exchange Rate](./rate.md)
 - [Fee Structure](./fees.md)
 
-# For Creators
+# For Communities
 - [Creating dualSTAKE contracts](./create.md)
 - [Farming](./farming.md)
 
