@@ -7,7 +7,9 @@ The `ORA` dualSTAKE token is called `oraALGO`.
 - Each `oraALGO` unit is backed by `ALGO` at a rate of 1:1
 - Each `oraALGO` unit is backed by an increasing amount of `ORA`
 
-`oraALGO` issuance is fully managed by a smart contract. Different tokens are managed by independent contracts, without co-mingling.
+<div class="warning">
+<code>oraALGO</code> issuance is fully managed by a smart contract. Different tokens are managed by independent contracts, without co-mingling.
+</div>
 
 A typical user journey with a dualSTAKE token like `oraALGO` would consist of:
 

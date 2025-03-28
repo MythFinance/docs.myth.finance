@@ -12,7 +12,7 @@ Farms are permissionless, immutable and extendable:
 
 Farms complete the synergy between your ASA and its dualSTAKE form. Read about the benefits of providing farms below.
 
-_Note: Farms only support the paired ASA of each dualSTAKE contract, e.g. `coopALGO` farms can only supplement with `COOP`._
+_Note: Farms only support the paired ASA of each dualSTAKE contract, e.g. `gobtcALGO` farms are only compatible with `goBTC`._
 
 ## Farming benefits
 
