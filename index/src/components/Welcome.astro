@@ -7,24 +7,25 @@ import DualStake from "./DualStake.astro";
 <div id="container" class="h-full">
   <main class="flex flex-col h-full justify-center items-center">
     <section
-      class="absolute top-0 left-0 self-start p-12 pb-0 text-muted-foreground/50 group hover:text-muted-foreground transition-all"
+      class="w-full absolute top-0 left-0 self-center md:self-start p-8 pt-4  pb-0 text-muted-foreground/50 group hover:text-muted-foreground transition-all flex md:flex-row flex-col items-center gap-2 md:gap-3"
     >
-      <a href="https://myth.finance" class="flex flex-row md:flex-col gap-6 md:gap-4">
-        <Logo width="96" height="96" />
-
-        <h1 class="group-hover:text-muted-foreground transition-all">
-          Myth Finance<br />
-          <span
-            class="text-muted-foreground/50 md:text-muted-foreground group-hover:text-muted-foreground/50 transition-all"
-            >Documentation</span
-          >
-        </h1>
+      <a
+        href="https://myth.finance"
+        class=""
+      >
+        <Logo width="250" />
+        
       </a>
+      <div
+          class="text-muted-foreground/50 -mt-1 text-3xl self-center md:text-muted-foreground group-hover:text-muted-foreground/50 transition-all"
+        >
+          Documentation
+        </div>
     </section>
 
     <section class="flex flex-col md:flex-row gap-6">
       <DualStake />
-	  <Bench />
+      <Bench />
     </section>
 
     <div></div>
