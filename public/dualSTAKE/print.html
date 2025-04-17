@@ -289,7 +289,7 @@ dualSTAKE works best when incentivized through <a href="./farming.html">dualSTAK
 <div style="break-before: page; page-break-before: always;"></div><h1 id="protesting-upgrades"><a class="header" href="#protesting-upgrades">Protesting upgrades</a></h1>
 <p>dualSTAKE contracts support <a href="./immutability.html">smart contract code upgrades</a> under certain guardrails.</p>
 <p>The intent behind upgradability is to evolve dualSTAKE with more features, such as support for new AMMs, multiple node runners, etc.</p>
-<p><strong>Code upgrades can change the rules of the system, as well as set funds in jeopardy.</strong> For this reason, code upgrades are time-delayed by 2 weeks, and the Myth Finance team will present the upgraded code in advance. The integrity of the (scheduled) upgrade will be guaranteed via cryptographic hashes - which means that we will be bound to upgrade <em>only</em> to the version we present.</p>
+<p><strong>Code upgrades can change the rules of the system, as well as set funds in jeopardy.</strong> For this reason, code upgrades are time-delayed by 1 week, and the Myth Finance team will present the upgraded code in advance. The integrity of the (scheduled) upgrade will be guaranteed via cryptographic hashes - which means that we will be bound to upgrade <em>only</em> to the version we present.</p>
 <p>As a user, you can protest a scheduled upgrade with your dualSTAKE tokens:</p>
 <blockquote>
 <p>"Protesting" enables users to signal that a scheduled upgrade is a deal-breaker for them.</p>
@@ -302,7 +302,7 @@ dualSTAKE works best when incentivized through <a href="./farming.html">dualSTAK
 <p>Protesting stake dissolution takes place <strong>before</strong> the upgrade and is enforced by the smart contract code. When dissolving protesting stake, funds flow from the contract directly to the user, without intermediation by the platform operator.</p>
 <p>An upgrade can not take place unless:</p>
 <ul>
-<li>2 weeks have elapsed since it was scheduled</li>
+<li>1 week has elapsed since it was scheduled</li>
 <li>All protesting stake has been dissolved, i.e. redeemed and returned to protesting users</li>
 </ul>
 <p>If enough stake is locked up as protesting, the platform operator may choose to cancel a planned upgrade, in which case the protesting stake will be sent back to users in dualSTAKE form, e.g. <code>oraALGO</code>.</p>
@@ -438,7 +438,7 @@ dualSTAKE works best when incentivized through <a href="./farming.html">dualSTAK
 <p>If they fail to restore in good time, the node runner account will be changed on the contract to a new runner. Accrued fees will be distributed to the node runner before this change.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="immutability"><a class="header" href="#immutability">Immutability</a></h1>
 <h2 id="smart-contract-code"><a class="header" href="#smart-contract-code">Smart contract code</a></h2>
-<p>Smart contract code is upgradable with a 2 week time-lock.</p>
+<p>Smart contract code is upgradable with a 1 week time-lock.</p>
 <p>The hashes of the proposed code upgrade will be published in advance for review by the community, along with the contract source code that produces them.</p>
 <p>The smart contract will only accept a code upgrade that matches the published hashes (stored in the contracts' global storage) after the time lock elapses.</p>
 <blockquote>
@@ -455,7 +455,7 @@ dualSTAKE works best when incentivized through <a href="./farming.html">dualSTAK
 <p>Platform and node runner fees are configurable. <strong>Fee increases are time-delayed</strong>, whereas fee decreases take effect immediately.</p>
 <p>The "fee admin" role, controller by the Myth Finance team, will be able to increase the fee rates:</p>
 <ul>
-<li>with a time delay of 2 weeks before effect</li>
+<li>with a time delay of 1 week before effect</li>
 <li>with a <strong>maximum change</strong> of +2.5% from the previous value</li>
 </ul>
 <p>This protects dualSTAKE holders from the Myth Finance team being able to immediately change the fee rate to 100%, which would compromise their rewards.</p>

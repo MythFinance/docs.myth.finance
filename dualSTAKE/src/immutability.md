@@ -2,7 +2,7 @@
 
 ## Smart contract code
 
-Smart contract code is upgradable with a 2 week time-lock.
+Smart contract code is upgradable with a 1 week time-lock.
 
 The hashes of the proposed code upgrade will be published in advance for review by the community, along with the contract source code that produces them.
 
@@ -28,7 +28,7 @@ Platform and node runner fees are configurable. **Fee increases are time-delayed
 
 The "fee admin" role, controller by the Myth Finance team, will be able to increase the fee rates:
 
-- with a time delay of 2 weeks before effect
+- with a time delay of 1 week before effect
 - with a **maximum change** of +2.5% from the previous value
 
 This protects dualSTAKE holders from the Myth Finance team being able to immediately change the fee rate to 100%, which would compromise their rewards.
