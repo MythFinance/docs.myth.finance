@@ -184,7 +184,7 @@
                         <h1 id="protesting-upgrades"><a class="header" href="#protesting-upgrades">Protesting upgrades</a></h1>
 <p>dualSTAKE contracts support <a href="./immutability.html">smart contract code upgrades</a> under certain guardrails.</p>
 <p>The intent behind upgradability is to evolve dualSTAKE with more features, such as support for new AMMs, multiple node runners, etc.</p>
-<p><strong>Code upgrades can change the rules of the system, as well as set funds in jeopardy.</strong> For this reason, code upgrades are time-delayed by 2 weeks, and the Myth Finance team will present the upgraded code in advance. The integrity of the (scheduled) upgrade will be guaranteed via cryptographic hashes - which means that we will be bound to upgrade <em>only</em> to the version we present.</p>
+<p><strong>Code upgrades can change the rules of the system, as well as set funds in jeopardy.</strong> For this reason, code upgrades are time-delayed by 1 week, and the Myth Finance team will present the upgraded code in advance. The integrity of the (scheduled) upgrade will be guaranteed via cryptographic hashes - which means that we will be bound to upgrade <em>only</em> to the version we present.</p>
 <p>As a user, you can protest a scheduled upgrade with your dualSTAKE tokens:</p>
 <blockquote>
 <p>"Protesting" enables users to signal that a scheduled upgrade is a deal-breaker for them.</p>
@@ -197,7 +197,7 @@
 <p>Protesting stake dissolution takes place <strong>before</strong> the upgrade and is enforced by the smart contract code. When dissolving protesting stake, funds flow from the contract directly to the user, without intermediation by the platform operator.</p>
 <p>An upgrade can not take place unless:</p>
 <ul>
-<li>2 weeks have elapsed since it was scheduled</li>
+<li>1 week has elapsed since it was scheduled</li>
 <li>All protesting stake has been dissolved, i.e. redeemed and returned to protesting users</li>
 </ul>
 <p>If enough stake is locked up as protesting, the platform operator may choose to cancel a planned upgrade, in which case the protesting stake will be sent back to users in dualSTAKE form, e.g. <code>oraALGO</code>.</p>
