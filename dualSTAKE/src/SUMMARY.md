@@ -32,8 +32,9 @@
 # For Developers
 - [Typescript SDK](./ts-sdk.md)
 
-# Audit
+# Security
 - [Audit](./audit.md)
+- [Bug Bountry](./bug-bounty.md)
 
 # Misc
 - [Links](./links.md)
