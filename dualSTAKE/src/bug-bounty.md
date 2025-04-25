@@ -4,7 +4,7 @@ The core dualSTAKE contract is under a bug bounty until at least June 30th, 2025
 
 ## Scope
 
-In Scope: [pyTEAL dualSTAKE contract](https://github.com/mythFinance/dualSTAKE)
+In Scope: [pyTEAL dualSTAKE contract](https://github.com/mythFinance/dualSTAKE) commit `0cd8b28d8701d58486956ba748dee04f4ba2548b`
 
 Out of scope: Other Myth Finance contracts, SDKs, client code, backend, frontend, privileged private keys
 
