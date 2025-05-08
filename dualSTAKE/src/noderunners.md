@@ -47,6 +47,8 @@ _Note: The first time you register a dualSTAKE account online will require a 2 A
 
 That is all: your node should now be participating on behalf of the dualSTAKE escrow account.
 
+_Note: The consensus online status on the dualSTAKE pages will take up to 15 minutes to update. Do not be concerned if it does not update to ONLINE immediately._
+
 ### 3. Monitor your node
 
 **We strongly recommend setting up an Allo Alerts account**. This free service provided by Nodely will notify you of important node events, like degraded voting performance, upcoming key expiration, etc.
