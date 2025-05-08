@@ -192,7 +192,25 @@
 <li>withdraw accrued node runner fees</li>
 </ul>
 <p>The "fee admin" role held by Myth Finance can also perform these actions.</p>
-<p><em>Note: at launch, myth nodes may run the dualSTAKE contracts for a brief period, until the web interface for node management is complete.</em></p>
+<h2 id="how-to-run-a-dualstake-node"><a class="header" href="#how-to-run-a-dualstake-node">How to run a dualSTAKE node</a></h2>
+<p><em>Note: you need to be allocated the noderunner role by the Myth Finance team before you can perform these tasks.</em></p>
+<p>When you connect the noderunner account and visit your dualSTAKE token page, you will see the <code>Manage Node</code> panel:</p>
+<p><img src="./noderunner.png" alt="" /></p>
+<h3 id="1-generate-participation-keys"><a class="header" href="#1-generate-participation-keys">1. Generate participation keys</a></h3>
+<p>First, you need to create participation keys for the dualSTAKE escrow account on your node. Copy the address using the Copy button next to the escrow address (e.g. <code>TWJN..</code>) and create participation keys for this account on your node. Recommended duration: at least 90 days / 3,000,000 rounds.</p>
+<h3 id="2-register-the-keys"><a class="header" href="#2-register-the-keys">2. Register the keys</a></h3>
+<p>In the <code>Manage Node</code> panel, click <code>MANAGE</code>, then <code>Key Registration</code>, then <code>Online</code>. You will see a form like the one shown below.</p>
+<p>Copy the participation key information from your node <strong>carefully</strong> and double-check the values. <em>Note: The "Voting key" field may be called "Vote key" on your node.</em></p>
+<p>Click <code>Register Online</code> and sign the transaction.</p>
+<p><em>Note: The first time you register a dualSTAKE account online will require a 2 ALGO fee for protocol rewards eligibility.</em></p>
+<p><img src="./keyreg.png" alt="" /></p>
+<h2 id="claim-your-node-runner-rewards"><a class="header" href="#claim-your-node-runner-rewards">Claim your node runner rewards</a></h2>
+<p>In the <code>Manage Node</code> panel, you can click the <code>CLAIM</code> button to withdraw your accrued noderunner fees.</p>
+<p><img src="./noderunner.png" alt="" /></p>
+<h2 id="transfer-the-node-runner-role"><a class="header" href="#transfer-the-node-runner-role">Transfer the node runner role</a></h2>
+<p>If you want to transfer the noderunner role to another account, you can do so through the <code>Manage Node</code> panel.</p>
+<p>Click <code>Manage</code>, then <code>Transfer Noderunner Role</code> and fill in the address you want to set as the node runner.</p>
+<p><em>Note: before you can transfer the node runner role, you need to withdraw any accrued node runner fees.</em></p>
 <h2 id="roadmap-feature-monitoring--intervention"><a class="header" href="#roadmap-feature-monitoring--intervention">Roadmap feature: Monitoring &amp; Intervention</a></h2>
 <p>In the future, we intend to develop monitoring for node runners' consensus participation. If a node is not participating properly over an extended period of time, a Myth node will be temporarily allocated to the dualSTAKE pool (without changing the node runner fees/manager account)</p>
 <p>The node runner must then restore their node to proper operation and issue a new key registration with their keys to take back control from the myth finance backup node.</p>
