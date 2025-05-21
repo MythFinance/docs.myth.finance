@@ -368,36 +368,47 @@ dualSTAKE works best when incentivized through <a href="./farming.html">dualSTAK
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="creating-dualstake-contracts"><a class="header" href="#creating-dualstake-contracts">Creating dualSTAKE contracts</a></h1>
 <p>Currently, creating dualSTAKE contracts is a manual process.</p>
-<p><strong>Please <a href="./contact.html">reach out</a> to the team if you are interested in creating a dualSTAKE token for your ASA.</strong></p>
-<p>A number of preconditions must be met to ensure that the protocol functions as expected:</p>
+<p>If you are interested in launching a dualSTAKE for your ASA, read this page carefully. You can find a link to the dualSTAKE creation form at the end of this page.</p>
+<h2 id="eligibility"><a class="header" href="#eligibility">Eligibility</a></h2>
+<p>For assets to be suitable for dualSTAKE, they must:</p>
 <ul>
-<li>Sufficient decimal precision for assets
+<li>have an ALGO liquidity pool on Tinyman, and with <strong>at least 25K ALGO total TVL</strong></li>
+<li>have at least 6 decimal place precision</li>
+</ul>
+<h2 id="minimum-stake"><a class="header" href="#minimum-stake">Minimum Stake</a></h2>
+<div class="warning">
+dualSTAKE can be launched with low stake, but rewards will only work after the balance exceeds 30,000 ALGO.
+</div>
+<p>Note: if your dualSTAKE contract falls below 30,000 ALGO balance, you will still be able to mint and redeem normally.</p>
+<p>Tip: Before launching a dualSTAKE, we recommend checking with your community to see if there is enough interest to reach this minimum.</p>
+<h2 id="creation-fee"><a class="header" href="#creation-fee">Creation Fee</a></h2>
+<p>A one-time creation fee of 20 USDC is required to create dualSTAKE systems. The payment address will be provided when we are ready to create your dualSTAKE.</p>
+<h2 id="decisions"><a class="header" href="#decisions">Decisions</a></h2>
+<p>If this all sounds good, you can fill out the form at the bottom to get started.  You will be asked to make these decisions:</p>
+<h3 id="1-dualstake-asset-name"><a class="header" href="#1-dualstake-asset-name">1. dualSTAKE Asset name</a></h3>
+<p>The dualSTAKE asset name is usually a straightforward affair: Your token name in lowercase, followed by <code>ALGO</code>. Some examples: <code>coopALGO</code> - <code>oraALGO</code> - <code>monkoALGO</code></p>
+<p>The asset name length should not exceed 10 characters. E.g. <code>marcusALGO</code> is at the limit.</p>
+<h3 id="2-dualstake-asset-unit-name"><a class="header" href="#2-dualstake-asset-unit-name">2. dualSTAKE Asset Unit name</a></h3>
+<p>The <em>unit</em> name is the name of a unit of your dualSTAKE asset. It is usually displayed on wallet balances, transactions, etc. Algorand only allows unit names up to 8 characters long.</p>
+<p><strong>dualSTAKE unit naming convention is to choose 4 characters in lowercase, followed by <code>ALGO</code>.</strong></p>
+<p>If your asset name is longer than 4 characters, you must find a suitable abbreviation. Some examples of abbreviated dualSTAKE unit names:</p>
 <ul>
-<li>Assets with low decimal precision may not be suitable for this version of dualSTAKE.</li>
+<li>goBTC dualSTAKE unit name is <code>gbtcALGO</code></li>
+<li>monko dualSTAKE unit name is <code>mnkoALGO</code></li>
 </ul>
-</li>
-<li>Liquidity pool must be chosen correctly
-<ul>
-<li>Currently, tinyman v2 liquidity pools are supported
-<ul>
-<li>Changing the LP requires a smart contract upgrade</li>
-</ul>
-</li>
-<li>A shallow pool without deep liquidity may result in inefficient swaps resulting in loss of rewards to arbitrage</li>
-</ul>
-</li>
-<li>Initial Exchange Rate
-<ul>
-<li>A non-zero initial exchange rate is supported, but should only be used in case of significant farming provision</li>
-</ul>
-</li>
-<li>Asset information
-<ul>
-<li>Asset unit names are currently chosen manually.</li>
-<li>The AVM restricts this field to 8 characters maximum length, requiring flexibility in naming dualSTAKE units for assets with longer names (e.g. <code>$MONKO</code>)</li>
-</ul>
-</li>
-</ul>
+<h3 id="3-initial-rate"><a class="header" href="#3-initial-rate">3. Initial rate</a></h3>
+<p>You will be asked whether you want your dualSTAKE token to launch with an initial ASA requirement or not (zero rate.)</p>
+<p><strong>Scenario A: Zero rate</strong>. dualSTAKE tokens can start at a zero dualSTAKE-to-ASA exchange rate. In this scenario, there would not be an initial requirement of your ASA in order to mint your dualSTAKE token. The ASA requirement would instead start rising slowly as rewards accumulate and are swapped into your token.</p>
+<p><strong>Scenario B: ASA requirement</strong>. If desired, dualSTAKE tokens can be bootstrapped with an initial ASA requirement. In this scenario, some of your ASA would be required in order to mint your dualSTAKE token. This is recommended in case you intend to provide a generous farm, which would justify the "soft-lock" of your ASA. <em>We recommend keeping the ASA requirement reasonable - such as  2% to 5% - so as not to disqualify users who may otherwise be willing to stake.</em></p>
+<p>Setting an ASA requirement will:</p>
+<p><code>+</code> Soft-lock your ASA into the system earlier.</p>
+<p><code>-</code> Disqualify users who do not have enough ASA balance to match their intended ALGO stake.</p>
+<h3 id="4-node-running"><a class="header" href="#4-node-running">4. Node running</a></h3>
+<p>If you or someone from your community can run your dualSTAKE node, you should! Otherwise, a node runner will be found for you by the Myth Finance team.</p>
+<p>Why run the node? Node runners retain 4% of ALGO rewards paid by the protocol as fees.</p>
+<p>If you opt to run your own node, you will be asked to provide an account that will have special permissions to perform node-related operations. Read more about <a href="./noderunners">running a dualSTAKE node here</a>.</p>
+<h2 id="complete-the-form"><a class="header" href="#complete-the-form">Complete the form</a></h2>
+<p>Sound good? Fill out the <a href="https://tally.so/r/woQ1MM">dualSTAKE creation form</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="farm-provision"><a class="header" href="#farm-provision">Farm provision</a></h1>
 <blockquote>
 <p><em>dualSTAKE farms offer your users a higher overall APR in return for choosing to stake on your dualSTAKE token over other appealing liquid staking options in the ecosystem.</em></p>
@@ -600,7 +611,7 @@ dualSTAKE works best when incentivized through <a href="./farming.html">dualSTAK
 <li>Third party vulnerabilities, e.g. AMMs that are called from dualSTAKE.</li>
 </ul>
 <p>Out of scope: Other Myth Finance contracts, SDKs, client code, backend, frontend, privileged private keys, third party code.</p>
-<h2 id="eligibility"><a class="header" href="#eligibility">Eligibility</a></h2>
+<h2 id="eligibility-1"><a class="header" href="#eligibility-1">Eligibility</a></h2>
 <ol>
 <li>Responsible, private disclosure to the designated security-contact email address.</li>
 <li>No public communications or exploitation.</li>
