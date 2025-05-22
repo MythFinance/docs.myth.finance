@@ -8,7 +8,7 @@ If you are interested in launching a dualSTAKE for your ASA, read this page care
 
 For assets to be suitable for dualSTAKE, they must:
 
-- have an ALGO liquidity pool on Tinyman, and with **at least 25K ALGO total TVL**
+- have an ALGO liquidity pool on Tinyman, with **at least 25K ALGO total TVL**
 - have at least 6 decimal place precision
 
 ## Minimum Stake
@@ -71,3 +71,9 @@ If you opt to run your own node, you will be asked to provide an account that wi
 ## Complete the form
 
 Sound good? Fill out the [dualSTAKE creation form](https://tally.so/r/woQ1MM)
+
+## Next Steps
+
+After filling in the form, we will check everything and get in touch about any additional info needed.
+
+We typically handle your dualSTAKE logo creation, creating the contracts, and Pera verification submission for your dualSTAKE asset. 
