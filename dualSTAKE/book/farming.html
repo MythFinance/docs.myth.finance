@@ -203,6 +203,72 @@
 </ol>
 <p>Offering a higher APR compared to competing staking options will incentivize your users to stake their <code>ALGO</code> on your community's dualSTAKE token. More <code>ALGO</code> staked means more blocks produced, which results in more frequent swaps, producing stronger buying pressure on your ASA.</p>
 <p>As rewards accumulate and are swapped, the exchange rate of the dualSTAKE token to the ASA increases globally for all holders, current and future. As a secondary benefit, minting new dualSTAKE tokens will require more of the ASA as time moves on, which provides a <strong>soft-lock utility for tokens making use of this system.</strong></p>
+<h2 id="create-a-farm"><a class="header" href="#create-a-farm">Create a farm</a></h2>
+<p>To create a farm for any dualSTAKE token, navigate to its page and locate the farm panel.</p>
+<p>If there is no existing farm, you will see a panel like the one shown below.</p>
+<p><img src="./farm-panel.png" alt="" /></p>
+<p>Click through <code>Create Farm</code> to begin. You will see a form like this:</p>
+<p><img src="./create-farm-1.png" alt="" /></p>
+<p>Fill in your desired duration and amount per block:</p>
+<ul>
+<li><strong>Duration</strong> is expressed in blocks produced by your dualSTAKE node.
+<ul>
+<li>Duration does not affect the displayed APR calculations</li>
+</ul>
+</li>
+<li><strong>Farm amount</strong> is the amount of your ASA that will be added into dualSTAKE with each block produced
+<ul>
+<li>This does affect the displayed APR calculations</li>
+</ul>
+</li>
+</ul>
+<p>Click <code>Calculate cost</code> to show the total cost and projected APR impact.</p>
+<p><img src="./create-farm-2.png" alt="" /></p>
+<p>When you are satisfied with your parameters, click <code>Create farm</code> to complete the process.</p>
+<h3 id="algo-cost-breakdown"><a class="header" href="#algo-cost-breakdown">ALGO cost breakdown</a></h3>
+<p>Aside from the ASA payments, there are additional ALGO costs to creating a farm, or extending the duration of an existing farm.</p>
+<p>You can click <code>&gt; Cost breakdown</code> to expand a drill-down into the farm creation costs:</p>
+<p><img src="./farm-cost-breakdown.png" alt="" /></p>
+<p>This adds up to a total cost of 0.2 ALGO per block (duration):</p>
+<ul>
+<li>0.1 ALGO per block is used to incentivize execution of the farms.
+<ul>
+<li>dualSTAKE farms are an open system, with a published SDK. Anyone can call the farm contracts to initiate a payout, which is rewarded with 0.1 ALGO as an execution incentive.</li>
+</ul>
+</li>
+<li>0.097 ALGO per block is paid as a platform fee.</li>
+<li>0.003 ALGO per block is used to cover inner transaction fees by the farm contract.</li>
+</ul>
+<p>Some additional fixed costs may apply depending on the inner state of the contract:</p>
+<ul>
+<li>0.1 ALGO ASA Opt-in fee</li>
+<li>0.0185 ALGO On-chain (box) storage fee</li>
+</ul>
+<h2 id="extend-farms"><a class="header" href="#extend-farms">Extend farms</a></h2>
+<p>When a farm is already set up, anyone can extend its duration or amount. To do so, locate the farm panel:</p>
+<p><img src="farm-active-panel.png" alt="" /></p>
+<p>Then click <code>View Details</code>:</p>
+<p><img src="farm-modal.png" alt="" /></p>
+<p>Then click <code>+ Extend Farm</code>:</p>
+<p><img src="farm-extend.png" alt="" /></p>
+<p>From here, you can access the forms to extend a farm by amount (paid per block) or duration (in blocks produced)</p>
+<h3 id="extend-farm-amount"><a class="header" href="#extend-farm-amount">Extend Farm Amount</a></h3>
+<p>Extending the farm's amount paid per block will increase the overall APR of your dualSTAKE. This should make it more appealing to your community to stake, resulting in more ALGO, more frequent blocks produced, and more buying pressure.</p>
+<p>From the panel at the end of the previous section, click <code>Extend Amount</code> to access this form:</p>
+<p><img src="./farm-incramount-1.png" alt="" /></p>
+<p>From here you can increase the farm amount per block paid out by the farm.</p>
+<p>Fill in your desired amount and click <code>Calculate cost</code>.</p>
+<p>You will see the total cost of your operation, as well as the impact to the APR:</p>
+<p><img src="./farm-incramount-2.png" alt="" /></p>
+<p>When you are satisfied with your parameters, click <code>Extend farm</code> to complete your operation.</p>
+<h3 id="extend-farm-duration"><a class="header" href="#extend-farm-duration">Extend Farm Duration</a></h3>
+<p>Extending the farm duration increases its longevity. <em>Note: the APR calculations shown on the site are "spot" calculations, so the farm durations are not taken into account.</em></p>
+<p>From the panel at the end of the <a href="#extend-farms"><code>Extend farms</code> section</a>, you can click <code>Extend Duration</code> to access this form:</p>
+<p><img src="./farm-incrdur-1.png" alt="" /></p>
+<p>Fill in your desired duration and click <code>Calculate cost</code>:</p>
+<p><img src="./farm-incrdur-2.png" alt="" /></p>
+<p>You can click <code>&gt; Cost breakdown</code> to drill down into the ASA and ALGO costs of this operation. These costs are documented <a href="#algo-cost-breakdown">here</a>.</p>
+<p>When you are satisfied with your parameters, click <code>Extend farm</code> to complete your operation.</p>
 
                     </main>
 
