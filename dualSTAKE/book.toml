@@ -10,5 +10,5 @@ default-theme = "ayu"
 preferred-dark-theme = "ayu"
 git-repository-url = "https://github.com/MythFinance/docs.myth.finance"
 edit-url-template =  "https://github.com/MythFinance/docs.myth.finance/edit/main/dualSTAKE/{path}"
-site-url = "https://docs.myth.finance/dualSTAKE"
+site-url = "/dualSTAKE/"
 mathjax-support = true

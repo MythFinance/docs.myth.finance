@@ -10,6 +10,7 @@
 - [Staking Reward Swapping](./rewards.md)
 - [Redeeming](./redeem.md)
 - [Protesting Upgrades](./protesting.md)
+- [Sunsetting](./sunsetting.md)
 
 # Technical
 - [Exchange Rate](./rate.md)

@@ -15,6 +15,8 @@ Where:
 - `Staked ALGO` refers to the `ALGO` deposited by users
   - Not including accumulated platform or node runner fees
 
+> ⚠ If you are integrating dualSTAKE rate calculations into your platform, make sure to account for asset decimals.
+
 ## Example
 
 Assuming the `oraALGO` dualSTAKE contract has:
