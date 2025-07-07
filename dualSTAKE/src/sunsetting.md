@@ -17,6 +17,7 @@ Sunsetting a dualSTAKE token:
 
 You can navigate to a sunsetting dualSTAKE page in a number of ways:
 
-- in the **Sunsetting** section at the bottom of the [dualSTAKE listings](https://myth.finance/dualSTAKE) page, or
-- visiting their page directly, e.g. https://myth.finance/dualSTAKE/xyzALGO, or
-- visiting their asset URL, e.g. https://myth.finance/asset/1234
+- Select `Show Sunset Tokens` at the bottom of the [dualSTAKE listings](https://myth.finance/dualSTAKE) page, or
+- Visit the [sunset dualSTAKE page](https://myth.finance/dualSTAKE/sunset) directly, or
+- Visit their page directly, e.g. https://myth.finance/dualSTAKE/xyzALGO, or
+- Visit their asset URL, e.g. https://myth.finance/asset/1234
