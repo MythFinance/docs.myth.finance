@@ -53,7 +53,7 @@ _Note: The consensus online status on the dualSTAKE pages will take up to 15 min
 
 **We strongly recommend setting up an Allo Alerts account**. This free service provided by Nodely will notify you of important node events, like degraded voting performance, upcoming key expiration, etc.
 
-1. Create a free account on [alerts.allo.info](https://alerts.allo.info/monitoring) 
+1. Create a free account on [alerts.allo.info](https://alerts.allo.info/monitoring) using your email address.
 2. Navigate to `Monitoring` -> `Add new`
 3. Enter the **dualSTAKE escrow address** that you generated participation keys for
 4. Label it with the dualSTAKE name, e.g. `coopALGO` and click `SAVE`
@@ -62,6 +62,12 @@ _Note: The consensus online status on the dualSTAKE pages will take up to 15 min
 7. Click `Add Trigger` and add the `Online/Offline Status` trigger
 
 You should now receive notifications via email when any of these alarms are triggered.
+
+## Renew participatin keys
+
+Your participation keys will eventually expire. If you have set up Allo alerts (see above), you will be notified about this event about a week before it takes place.
+
+To renew your participation keys, follow the [key registration procedure above](#how-to-run-a-dualstake-node): generate new participation keys and register them online.
 
 ## Claim your node runner rewards
 
@@ -76,11 +82,3 @@ If you want to transfer the node runner role to another account, you can do so t
 Click `Manage`, then `Transfer Noderunner Role` and fill in the address you want to set as the node runner.
 
 _Note: before you can transfer the node runner role, you need to withdraw any accrued node runner fees._
-
-## Roadmap feature: Monitoring & Intervention
-
-In the future, we intend to develop monitoring for node runners' consensus participation. If a node is not participating properly over an extended period of time, a Myth node will be temporarily allocated to the dualSTAKE pool (without changing the node runner fees/manager account)
-
-The node runner must then restore their node to proper operation and issue a new key registration with their keys to take back control from the myth finance backup node.
-
-If they fail to restore in good time, the node runner account will be changed on the contract to a new runner. Accrued fees will be distributed to the node runner before this change.

@@ -18,8 +18,8 @@ _Note: Farms only support the paired ASA of each dualSTAKE contract, e.g. `gobtc
 
 **As an ASA creator or community, dualSTAKE farms allow you to utilize your ASA treasury into a buying pressure incentive.**
 
-1) increase the APR of your dualSTAKE token, making it more competitive.
-2) more ALGO locked ➡ stronger buying pressure.
+1) increase the APR of your dualSTAKE token, making it more competitive and appealing to users.
+2) more ALGO locked ➡ more frequent blocks produced ➡ stronger buying pressure.
 3) provide additional soft-lock utility to your ASA via dualSTAKE
 
 Offering a higher APR compared to competing staking options will incentivize your users to stake their `ALGO` on your community's dualSTAKE token. More `ALGO` staked means more blocks produced, which results in more frequent swaps, producing stronger buying pressure on your ASA.
@@ -42,6 +42,7 @@ Fill in your desired duration and amount per block:
 
 - **Duration** is expressed in blocks produced by your dualSTAKE node.
   - Duration does not affect the displayed APR calculations
+  - The maximum duration for a farm is dependent on the amount of ALGO staked. It will roughly correspond to the expected block production over a period of 45 days (with a floor duration of 30 blocks.)
 - **Farm amount** is the amount of your ASA that will be added into dualSTAKE with each block produced
   - This does affect the displayed APR calculations
 
