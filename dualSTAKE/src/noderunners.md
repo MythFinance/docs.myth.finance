@@ -63,7 +63,7 @@ _Note: The consensus online status on the dualSTAKE pages will take up to 15 min
 
 You should now receive notifications via email when any of these alarms are triggered.
 
-## Renew participatin keys
+## Renew participation keys
 
 Your participation keys will eventually expire. If you have set up Allo alerts (see above), you will be notified about this event about a week before it takes place.
 
