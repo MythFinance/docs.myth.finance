@@ -213,7 +213,7 @@
 <h3 id="3-monitor-your-node"><a class="header" href="#3-monitor-your-node">3. Monitor your node</a></h3>
 <p><strong>We strongly recommend setting up an Allo Alerts account</strong>. This free service provided by Nodely will notify you of important node events, like degraded voting performance, upcoming key expiration, etc.</p>
 <ol>
-<li>Create a free account on <a href="https://alerts.allo.info/monitoring">alerts.allo.info</a></li>
+<li>Create a free account on <a href="https://alerts.allo.info/monitoring">alerts.allo.info</a> using your email address.</li>
 <li>Navigate to <code>Monitoring</code> -&gt; <code>Add new</code></li>
 <li>Enter the <strong>dualSTAKE escrow address</strong> that you generated participation keys for</li>
 <li>Label it with the dualSTAKE name, e.g. <code>coopALGO</code> and click <code>SAVE</code></li>
@@ -222,6 +222,9 @@
 <li>Click <code>Add Trigger</code> and add the <code>Online/Offline Status</code> trigger</li>
 </ol>
 <p>You should now receive notifications via email when any of these alarms are triggered.</p>
+<h2 id="renew-participation-keys"><a class="header" href="#renew-participation-keys">Renew participation keys</a></h2>
+<p>Your participation keys will eventually expire. If you have set up Allo alerts (see above), you will be notified about this event about a week before it takes place.</p>
+<p>To renew your participation keys, follow the <a href="#how-to-run-a-dualstake-node">key registration procedure above</a>: generate new participation keys and register them online.</p>
 <h2 id="claim-your-node-runner-rewards"><a class="header" href="#claim-your-node-runner-rewards">Claim your node runner rewards</a></h2>
 <p>In the <code>Manage Node</code> panel, you can click the <code>CLAIM</code> button to withdraw your accrued node runner fees.</p>
 <p><img src="./noderunner.png" alt="" /></p>
@@ -229,10 +232,6 @@
 <p>If you want to transfer the node runner role to another account, you can do so through the <code>Manage Node</code> panel.</p>
 <p>Click <code>Manage</code>, then <code>Transfer Noderunner Role</code> and fill in the address you want to set as the node runner.</p>
 <p><em>Note: before you can transfer the node runner role, you need to withdraw any accrued node runner fees.</em></p>
-<h2 id="roadmap-feature-monitoring--intervention"><a class="header" href="#roadmap-feature-monitoring--intervention">Roadmap feature: Monitoring &amp; Intervention</a></h2>
-<p>In the future, we intend to develop monitoring for node runners' consensus participation. If a node is not participating properly over an extended period of time, a Myth node will be temporarily allocated to the dualSTAKE pool (without changing the node runner fees/manager account)</p>
-<p>The node runner must then restore their node to proper operation and issue a new key registration with their keys to take back control from the myth finance backup node.</p>
-<p>If they fail to restore in good time, the node runner account will be changed on the contract to a new runner. Accrued fees will be distributed to the node runner before this change.</p>
 
                     </main>
 

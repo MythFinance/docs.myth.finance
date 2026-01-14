@@ -453,8 +453,8 @@ dualSTAKE can be launched with low stake, but rewards will only work after the b
 <h2 id="farming-benefits"><a class="header" href="#farming-benefits">Farming benefits</a></h2>
 <p><strong>As an ASA creator or community, dualSTAKE farms allow you to utilize your ASA treasury into a buying pressure incentive.</strong></p>
 <ol>
-<li>increase the APR of your dualSTAKE token, making it more competitive.</li>
-<li>more ALGO locked ➡ stronger buying pressure.</li>
+<li>increase the APR of your dualSTAKE token, making it more competitive and appealing to users.</li>
+<li>more ALGO locked ➡ more frequent blocks produced ➡ stronger buying pressure.</li>
 <li>provide additional soft-lock utility to your ASA via dualSTAKE</li>
 </ol>
 <p>Offering a higher APR compared to competing staking options will incentivize your users to stake their <code>ALGO</code> on your community's dualSTAKE token. More <code>ALGO</code> staked means more blocks produced, which results in more frequent swaps, producing stronger buying pressure on your ASA.</p>
@@ -470,6 +470,7 @@ dualSTAKE can be launched with low stake, but rewards will only work after the b
 <li><strong>Duration</strong> is expressed in blocks produced by your dualSTAKE node.
 <ul>
 <li>Duration does not affect the displayed APR calculations</li>
+<li>The maximum duration for a farm is dependent on the amount of ALGO staked. It will roughly correspond to the expected block production over a period of 45 days (with a floor duration of 30 blocks.)</li>
 </ul>
 </li>
 <li><strong>Farm amount</strong> is the amount of your ASA that will be added into dualSTAKE with each block produced
@@ -557,7 +558,7 @@ dualSTAKE can be launched with low stake, but rewards will only work after the b
 <h3 id="3-monitor-your-node"><a class="header" href="#3-monitor-your-node">3. Monitor your node</a></h3>
 <p><strong>We strongly recommend setting up an Allo Alerts account</strong>. This free service provided by Nodely will notify you of important node events, like degraded voting performance, upcoming key expiration, etc.</p>
 <ol>
-<li>Create a free account on <a href="https://alerts.allo.info/monitoring">alerts.allo.info</a></li>
+<li>Create a free account on <a href="https://alerts.allo.info/monitoring">alerts.allo.info</a> using your email address.</li>
 <li>Navigate to <code>Monitoring</code> -&gt; <code>Add new</code></li>
 <li>Enter the <strong>dualSTAKE escrow address</strong> that you generated participation keys for</li>
 <li>Label it with the dualSTAKE name, e.g. <code>coopALGO</code> and click <code>SAVE</code></li>
@@ -566,6 +567,9 @@ dualSTAKE can be launched with low stake, but rewards will only work after the b
 <li>Click <code>Add Trigger</code> and add the <code>Online/Offline Status</code> trigger</li>
 </ol>
 <p>You should now receive notifications via email when any of these alarms are triggered.</p>
+<h2 id="renew-participation-keys"><a class="header" href="#renew-participation-keys">Renew participation keys</a></h2>
+<p>Your participation keys will eventually expire. If you have set up Allo alerts (see above), you will be notified about this event about a week before it takes place.</p>
+<p>To renew your participation keys, follow the <a href="noderunners.html#how-to-run-a-dualstake-node">key registration procedure above</a>: generate new participation keys and register them online.</p>
 <h2 id="claim-your-node-runner-rewards"><a class="header" href="#claim-your-node-runner-rewards">Claim your node runner rewards</a></h2>
 <p>In the <code>Manage Node</code> panel, you can click the <code>CLAIM</code> button to withdraw your accrued node runner fees.</p>
 <p><img src="./noderunner.png" alt="" /></p>
@@ -573,10 +577,6 @@ dualSTAKE can be launched with low stake, but rewards will only work after the b
 <p>If you want to transfer the node runner role to another account, you can do so through the <code>Manage Node</code> panel.</p>
 <p>Click <code>Manage</code>, then <code>Transfer Noderunner Role</code> and fill in the address you want to set as the node runner.</p>
 <p><em>Note: before you can transfer the node runner role, you need to withdraw any accrued node runner fees.</em></p>
-<h2 id="roadmap-feature-monitoring--intervention"><a class="header" href="#roadmap-feature-monitoring--intervention">Roadmap feature: Monitoring &amp; Intervention</a></h2>
-<p>In the future, we intend to develop monitoring for node runners' consensus participation. If a node is not participating properly over an extended period of time, a Myth node will be temporarily allocated to the dualSTAKE pool (without changing the node runner fees/manager account)</p>
-<p>The node runner must then restore their node to proper operation and issue a new key registration with their keys to take back control from the myth finance backup node.</p>
-<p>If they fail to restore in good time, the node runner account will be changed on the contract to a new runner. Accrued fees will be distributed to the node runner before this change.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="immutability"><a class="header" href="#immutability">Immutability</a></h1>
 <h2 id="smart-contract-code"><a class="header" href="#smart-contract-code">Smart contract code</a></h2>
 <p>Smart contract code is upgradable with a 1 week time-lock.</p>
@@ -592,6 +592,14 @@ dualSTAKE can be launched with low stake, but rewards will only work after the b
 36: [32 bytes] approval_page_2_hash bytes
 </code></pre>
 <p>dualSTAKE smart contract code may exceed 4KB, which is the largest value that can be hashed in the AVM. For this reason, the program is hashed in 4KB "pages". When an upgrade takes effect, each 4KB-sized program page is hashed with SHA512/256 and compared against the stored hash in the <code>contract_upgrade</code> storage value. The upgrade is only allowed to take effect if all hashes match.</p>
+<h3 id="code-to-hash-verification"><a class="header" href="#code-to-hash-verification">Code-to-hash Verification</a></h3>
+<p>For transparency, dualSTAKE contracts are built and hashed in a public Github workflow called <a href="https://github.com/MythFinance/dualSTAKE/actions/workflows/build.yml">Build and hash.</a></p>
+<p>The <strong>Build contract</strong> step will compile the pyteal to teal (<code>artifacts/approval.teal</code>), and then to AVM bytecode (<code>artifacts/approval.teal.tok</code>), and then hash the bytecode's 4K pages (<code>artifacts/hashes/approval.teal.tok.page1.sha512-256</code> and <code>artifacts/hashes/approval.teal.tok.page1.sha512-256</code>.) These are then committed to the repository and tagged with the aforementioned hashes.</p>
+<p>The 4KB program hashes in the <code>approval.teal.tok.pageX.sha512-256</code> files, as well as the output of the workflow action, should match the hashes in the smart conrtact storage as described above.</p>
+<div class="warning">
+<p>In the interest of transparency, it should be noted that the built artifacts (including hashes) that are committed to the repo are <strong>not tamper-proof</strong>, as an admin could imitate the Github CI user/email and force push to overwrite. <strong>However, the workflow action logs are not possible to spoof</strong> without tampering with the committed build files. A stronger solution would make use of <a href="https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations">Github Artifact attestations</a>, but they do not support the SHA512-256 algorithm currently required by the dualSTAKE upgrade process.</p>
+</div>
+<p>Independent reproduction of the artifacts and hashes is possible by cloning the repo locally and running <code>pip install -r requirements.txt</code> and <code>./build-and-hash.sh</code> at the root.</p>
 <h2 id="fee-configuration"><a class="header" href="#fee-configuration">Fee Configuration</a></h2>
 <p>Platform and node runner fees are configurable. <strong>Fee increases are time-delayed</strong>, whereas fee decreases take effect immediately.</p>
 <p>The "fee admin" role, controller by the Myth Finance team, will be able to increase the fee rates:</p>
@@ -741,7 +749,9 @@ dualSTAKE can be launched with low stake, but rewards will only work after the b
 <p>Vulnerabilities not described under "critical" or "high" will be accepted and examined ad-hoc.</p>
 <p>The rule of thumb for a valid vulnerability is "practical damage, done to a party involved in the dualSTAKE contract".</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="links"><a class="header" href="#links">Links</a></h1>
-<p><a href="https://myth.finance">Protocol frontend</a></p>
+<p><a href="https://myth.finance">Protocol frontend mainnet</a></p>
+<p><a href="https://backup.myth.finance">Protocol frontend mainnet (backup)</a></p>
+<p><a href="https://testnet.myth.finance">Protocol frontend testnet</a></p>
 <p><a href="https://docs.myth.finance">Documentation</a> ⬅ You are here</p>
 <hr />
 <p>For contact details see <a href="./contact.html">Contact</a></p>
