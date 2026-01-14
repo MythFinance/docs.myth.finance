@@ -28,7 +28,7 @@ For transparency, dualSTAKE contracts are built and hashed in a public Github wo
 
 The **Build contract** step will compile the pyteal to teal (`artifacts/approval.teal`), and then to AVM bytecode (`artifacts/approval.teal.tok`), and then hash the bytecode's 4K pages (`artifacts/hashes/approval.teal.tok.page1.sha512-256` and `artifacts/hashes/approval.teal.tok.page1.sha512-256`.) These are then committed to the repository and tagged with the aforementioned hashes.
 
-The 4KB program hashes in the `approval.teal.tok.pageX.sha512-256` files, as well as the output of the workflow action, should match the hashes in the smart conrtact storage as described above.
+The 4KB program hashes in the `approval.teal.tok.pageX.sha512-256` files, as well as the output of the workflow action, should match the hashes in the smart contract storage as described above.
 
 <div class="warning">
 
