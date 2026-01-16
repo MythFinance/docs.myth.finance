@@ -1,6 +1,4 @@
-# Rate
-
-# Rate (Mint & Redeem)
+# Exchange Rate (Mint & Redeem)
 
 dualSTAKE tokens are backed 1:1 by **ALGO**, plus an additional amount of a **paired ASA** (Algorand Standard Asset). Each dualSTAKE token has its own paired ASA and therefore its own exchange rate.
 
