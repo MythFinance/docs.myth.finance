@@ -184,14 +184,14 @@
                         <h1 id="redeeming"><a class="header" href="#redeeming">Redeeming</a></h1>
 <p>Users can redeem their dualSTAKE tokens at any time. Redeeming breaks dualSTAKE up into their component <code>ALGO</code>+ASA parts and returns them to the user.</p>
 <p>Using <code>oraALGO</code> as an example:</p>
-<p>Users can redeem their <code>oraALGO</code> tokens via the smart contract and receive the backing <code>ALGO</code> (at 1:1) and <code>ORA</code> (at <a href="./rate.html">current rate</a>).</p>
+<p>Users can redeem their <code>oraALGO</code> tokens via the smart contract and receive the backing <code>ALGO</code> (at 1:1) and accrued <code>ORA</code> (at <a href="./rate.html#redeem-exchange-rate">current redeem rate</a>).</p>
 <p>Assuming staking rewards have accumulated between minting and redeeming, the <code>ORA</code> amount withdrawn during redemption will be larger than the deposited amount during mint.</p>
 <p><em>E.g. Alice minted 100 <code>oraALGO</code> by depositing 100 <code>ALGO</code> and 1 <code>ORA</code>. Some time later, <code>oraALGO</code> has appreciated against <code>ORA</code>, so she redeems her 100 <code>oraALGO</code> tokens for 100 <code>ALGO</code>, plus 3.14 <code>ORA</code>.</em></p>
 <p><img src="redeem-ora.png" alt="" /></p>
 <blockquote>
 <p>Not sure what this is all about? Start over from <a href="./overview.html">the overview page</a>.</p>
 </blockquote>
-<p>Minting and redeeming do not incur platform fees, so users should always receive at least as much <code>ALGO</code> and <code>ORA</code> as they deposited.</p>
+<p>Minting and redeeming do not incur platform fees, but minting requires an additional micro unit of the ASA, so if a user mints any amount of <code>oraALGO</code> and then redeems it immediately, they would receive 0.00000001 <code>ORA</code> less than what they deposited.</p>
 <p>Continue to: <a href="./protesting.html">"Protesting"</a> or navigate to a specific section using the menu.</p>
 
                     </main>

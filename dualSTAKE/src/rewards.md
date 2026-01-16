@@ -2,7 +2,7 @@
 
 > Where does the yield come from? Short answer: Algorand staking rewards, converted to your favorite ASA permissionlessly. Additional rewards can accrue from our permissionless [dualSTAKE farms](./farming.html).
 
-A dualSTAKE smart contract delegates its escrow account's voting power to a node runner, in order for them to participate in consensus on its behalf.
+A dualSTAKE smart contract delegates its escrow account's protocol voting power to a node runner, in order for them to participate in consensus on its behalf.
 
 As blocks are proposed by the node:
 
@@ -16,9 +16,9 @@ Platform and node runner fees are taken from the staking rewards, pre-swap.
 
 Swapping is triggered in one of two ways:
 
-- Our backend systems will call the contract to perform the `ALGO`-`ASA` swap whenever a block is produced
+- Our backend systems will call the contract to perform the `ALGO`-`ASA` swap whenever a block is produced. This action is permissionless and can also be performed by anyone [using the SDK.](/ts-sdk.html)
 - Or, automatically before minting or redeeming dualSTAKE tokens
 
-This way, even if our backend systems lag behind or are offline, you can be sure that the dualSTAKE exchange rate is correct.
+This way, even if our backend systems lag behind or are offline, you can be sure that the dualSTAKE exchange rate is correct during minting and redeeming.
 
 Continue to: [Redeeming dualSTAKE tokens](./redeem.html) or navigate to a specific section using the menu.

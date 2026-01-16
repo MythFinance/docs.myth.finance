@@ -42,6 +42,6 @@ Platform and node operator fees are not paid immediately. Instead they remain in
 
 This serves multiple purposes:
 
-- fewer required transaction fees
-- contributing to the voting power of the dualSTAKE escrow address in consensus
-- fewer taxable events for the platform and node runners
+- Fewer required transaction fees
+- Contributing to the voting power of the dualSTAKE escrow address in consensus
+- In some jurisdictions, fewer taxable events for the platform and node runners

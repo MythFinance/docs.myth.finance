@@ -1,6 +1,6 @@
 # Farm provision
 
-> _dualSTAKE farms offer your users a higher overall APR in return for choosing to stake on your dualSTAKE token over other appealing liquid staking options in the ecosystem._
+> _dualSTAKE farms offer your users a higher overall APR, incentivizing them to stake on your dualSTAKE token over other appealing staking options in the ecosystem._
 
 dualSTAKE farms can be configured to pay out an extra amount of the paired ASA for each block produced by dualSTAKE contracts.
 

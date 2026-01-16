@@ -244,11 +244,11 @@ dualSTAKE works best when incentivized through <a href="./farming.html">dualSTAK
 <p>Using <code>coopALGO</code> as an example, a user would mint by depositing:</p>
 <ul>
 <li><code>ALGO</code> at a fixed 1:1 rate</li>
-<li><code>COOP</code> at the current <a href="./rate.html">exchange rate</a></li>
+<li><code>COOP</code> at the current <a href="./rate.html#mint-exchange-rate">mint exchange rate</a></li>
 </ul>
 <p>In return, they receive an equal amount of <code>coopALGO</code> tokens to the <code>ALGO</code> they deposited.</p>
 <p>Minting does not incur any platform fees.</p>
-<p><em>E.g. If <code>coopALGO</code> is at 10:1 with <code>COOP</code>, the user would deposit 10 <code>ALGO</code> + 1 <code>COOP</code> to receive 10 <code>coopALGO</code> tokens.</em></p>
+<p><em>E.g. If <code>coopALGO</code> is at 10:1 with <code>COOP</code>, the user would deposit 10 <code>ALGO</code> + 1.000001 <code>COOP</code> to receive 10 <code>coopALGO</code> tokens.</em></p>
 <p><img src="mint-coop.png" alt="" /></p>
 <blockquote>
 <p>Not sure what this is all about? Start over from <a href="./overview.html">the overview page</a>.</p>
@@ -258,7 +258,7 @@ dualSTAKE works best when incentivized through <a href="./farming.html">dualSTAK
 <blockquote>
 <p>Where does the yield come from? Short answer: Algorand staking rewards, converted to your favorite ASA permissionlessly. Additional rewards can accrue from our permissionless <a href="./farming.html">dualSTAKE farms</a>.</p>
 </blockquote>
-<p>A dualSTAKE smart contract delegates its escrow account's voting power to a node runner, in order for them to participate in consensus on its behalf.</p>
+<p>A dualSTAKE smart contract delegates its escrow account's protocol voting power to a node runner, in order for them to participate in consensus on its behalf.</p>
 <p>As blocks are proposed by the node:</p>
 <ul>
 <li>The Algorand protocol distributes <code>ALGO</code> rewards into the smart contract escrow account</li>
@@ -269,22 +269,22 @@ dualSTAKE works best when incentivized through <a href="./farming.html">dualSTAK
 <p>Platform and node runner fees are taken from the staking rewards, pre-swap.</p>
 <p>Swapping is triggered in one of two ways:</p>
 <ul>
-<li>Our backend systems will call the contract to perform the <code>ALGO</code>-<code>ASA</code> swap whenever a block is produced</li>
+<li>Our backend systems will call the contract to perform the <code>ALGO</code>-<code>ASA</code> swap whenever a block is produced. This action is permissionless and can also be performed by anyone <a href="/ts-sdk.html">using the SDK.</a></li>
 <li>Or, automatically before minting or redeeming dualSTAKE tokens</li>
 </ul>
-<p>This way, even if our backend systems lag behind or are offline, you can be sure that the dualSTAKE exchange rate is correct.</p>
+<p>This way, even if our backend systems lag behind or are offline, you can be sure that the dualSTAKE exchange rate is correct during minting and redeeming.</p>
 <p>Continue to: <a href="./redeem.html">Redeeming dualSTAKE tokens</a> or navigate to a specific section using the menu.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="redeeming"><a class="header" href="#redeeming">Redeeming</a></h1>
 <p>Users can redeem their dualSTAKE tokens at any time. Redeeming breaks dualSTAKE up into their component <code>ALGO</code>+ASA parts and returns them to the user.</p>
 <p>Using <code>oraALGO</code> as an example:</p>
-<p>Users can redeem their <code>oraALGO</code> tokens via the smart contract and receive the backing <code>ALGO</code> (at 1:1) and <code>ORA</code> (at <a href="./rate.html">current rate</a>).</p>
+<p>Users can redeem their <code>oraALGO</code> tokens via the smart contract and receive the backing <code>ALGO</code> (at 1:1) and accrued <code>ORA</code> (at <a href="./rate.html#redeem-exchange-rate">current redeem rate</a>).</p>
 <p>Assuming staking rewards have accumulated between minting and redeeming, the <code>ORA</code> amount withdrawn during redemption will be larger than the deposited amount during mint.</p>
 <p><em>E.g. Alice minted 100 <code>oraALGO</code> by depositing 100 <code>ALGO</code> and 1 <code>ORA</code>. Some time later, <code>oraALGO</code> has appreciated against <code>ORA</code>, so she redeems her 100 <code>oraALGO</code> tokens for 100 <code>ALGO</code>, plus 3.14 <code>ORA</code>.</em></p>
 <p><img src="redeem-ora.png" alt="" /></p>
 <blockquote>
 <p>Not sure what this is all about? Start over from <a href="./overview.html">the overview page</a>.</p>
 </blockquote>
-<p>Minting and redeeming do not incur platform fees, so users should always receive at least as much <code>ALGO</code> and <code>ORA</code> as they deposited.</p>
+<p>Minting and redeeming do not incur platform fees, but minting requires an additional micro unit of the ASA, so if a user mints any amount of <code>oraALGO</code> and then redeems it immediately, they would receive 0.00000001 <code>ORA</code> less than what they deposited.</p>
 <p>Continue to: <a href="./protesting.html">"Protesting"</a> or navigate to a specific section using the menu.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="protesting-upgrades"><a class="header" href="#protesting-upgrades">Protesting upgrades</a></h1>
 <p>dualSTAKE contracts support <a href="./immutability.html">smart contract code upgrades</a> under certain guardrails.</p>
@@ -330,9 +330,22 @@ dualSTAKE works best when incentivized through <a href="./farming.html">dualSTAK
 <li>Visit their asset URL, e.g. https://myth.finance/asset/1234</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="rate"><a class="header" href="#rate">Rate</a></h1>
-<p>dualSTAKE tokens are backed by <code>ALGO</code> and their paired asset, with a different exchange rate for each.</p>
-<p>Minting dualSTAKE tokens will require the equivalent amounts of both tokens, and similarly redeeming will yield the equivalent amounts of both tokens.</p>
-<p>The formula to determine the exchange rate of the dualSTAKE token to the paired assets is:</p>
+<h1 id="rate-mint--redeem"><a class="header" href="#rate-mint--redeem">Rate (Mint &amp; Redeem)</a></h1>
+<p>dualSTAKE tokens are backed 1:1 by <strong>ALGO</strong>, plus an additional amount of a <strong>paired ASA</strong> (Algorand Standard Asset). Each dualSTAKE token has its own paired ASA and therefore its own exchange rate.</p>
+<p>When users:</p>
+<ul>
+<li><strong>Mint</strong> a dualSTAKE token, they deposit the required amounts of <strong>ALGO + paired ASA</strong></li>
+<li><strong>Redeem</strong> a dualSTAKE token, they receive the equivalent amounts of <strong>ALGO + paired ASA</strong></li>
+</ul>
+<p>This page explains how the protocol calculates those amounts.</p>
+<h2 id="important-mint-rate-vs-redeem-rate-rounding-protection"><a class="header" href="#important-mint-rate-vs-redeem-rate-rounding-protection">Important: Mint Rate vs. Redeem Rate (Rounding Protection)</a></h2>
+<p>The <strong>mint rate is intentionally set to be 1 microunit of the paired ASA higher than the redeem rate</strong>.</p>
+<p>This prevents value loss caused by rounding down sub-microunit amounts. Without this offset, users could experience experience small but repeated losses due to integer rounding, which could slowly reduce the effective backing of the dualSTAKE token.</p>
+<blockquote>
+<p>This does not materially affect normal users, but it <em>does</em> eliminate edge-case drift and protects the backing math.</p>
+</blockquote>
+<h2 id="redeem-exchange-rate"><a class="header" href="#redeem-exchange-rate">Redeem exchange rate</a></h2>
+<p>The formula to determine the redeem exchange rate of the dualSTAKE token to the paired assets is:</p>
 <p>\[1\ dsALGO=1\ ALGO+\frac{Paired\ ASA\ Balance}{Staked\ ALGO}ASA\]</p>
 <p>Where:</p>
 <ul>
@@ -344,20 +357,52 @@ dualSTAKE works best when incentivized through <a href="./farming.html">dualSTAK
 </ul>
 </li>
 </ul>
-<blockquote>
-<p>⚠ If you are integrating dualSTAKE rate calculations into your platform, make sure to account for asset decimals.</p>
-</blockquote>
+<h2 id="mint-exchange-rate"><a class="header" href="#mint-exchange-rate">Mint Exchange rate</a></h2>
+<p>The mint exchange rate equals the redeem rate plus an additional 1 base unit of the ASA:</p>
+<p>\[1\ dsALGO=1\ ALGO+\frac{Paired\ ASA\ Balance}{Staked\ ALGO}ASA+1\ ASA\ base\ unit\]</p>
+<p>Additional to the redeem exchange rate explanations:</p>
+<ul>
+<li><code>1 ASA base unit</code> refers to the smallest amount of the ASA.
+<ul>
+<li>This is a constant value that does not scale with the amount being minted.</li>
+<li>e.g. for an ASA with 6 decimals: 0.000001</li>
+<li>e.g. for an ASA with 8 decimals: 0.00000001</li>
+<li>Note: when the paired ASA balance is zero, this amount is not required</li>
+</ul>
+</li>
+</ul>
+<p>The additional unit of ASA required during minting eliminates the possibility of existing holders losing value from ASA rounding down during mint/redeem operations.</p>
 <h2 id="example"><a class="header" href="#example">Example</a></h2>
-<p>Assuming the <code>oraALGO</code> dualSTAKE contract has:</p>
+<p>Assuming that <code>ORA</code> has 8 asset decimals and the <code>oraALGO</code> dualSTAKE contract has:</p>
 <ul>
 <li>30,000 <code>ALGO</code> staked</li>
 <li>10,000 <code>ORA</code> balance</li>
 </ul>
-<p>Then:</p>
+<p>Then redeeming 1 <code>oraALGO</code> would yield:</p>
 <p>\[1\ oraALGO=1\ ALGO+\frac{1}{3}ORA\]</p>
-<h3 id="initial-asa-exchange-rate"><a class="header" href="#initial-asa-exchange-rate">Initial ASA exchange rate</a></h3>
-<p>Usually, the initial dualSTAKE:ASA exchange rate will be zero, but in some cases a community intending to provide a generous <a href="./farming.html">farm</a> may choose to bootstrap a dualSTAKE token with a non-zero exchange rate for their ASA.</p>
+<p>And minting 1 <code>oraALGO</code>, would require:</p>
+<p>\[1\ oraALGO=1\ ALGO+\frac{1}{3}ORA+0.00000001\ ORA\]</p>
+<p>Where 0.00000001 is the micro unit of <code>ORA</code> at 8 asset decimals.</p>
+<blockquote>
+<p>⚠ If you are integrating dualSTAKE rate calculations into your platform, make sure to account for asset decimals.</p>
+</blockquote>
+<h2 id="what-this-rate-means-in-practice"><a class="header" href="#what-this-rate-means-in-practice">What This Rate Means in Practice</a></h2>
+<p>At any moment, the contract has:</p>
+<ul>
+<li>a pool of <strong>staked ALGO</strong></li>
+<li>a pool of <strong>paired ASA</strong></li>
+</ul>
+<p>The paired ASA portion of the rate increases over time as rewards accumulate in the contract.</p>
+<p>This means that dualSTAKE tokens become redeemable for <strong>more ASA</strong> over time (while still remaining redeemable for <strong>1 ALGO</strong> each)</p>
+<h2 id="initial-asa-exchange-rate"><a class="header" href="#initial-asa-exchange-rate">Initial ASA exchange rate</a></h2>
+<p>In most deployments, the initial dualSTAKE:ASA exchange rate starts at <strong>0</strong>, meaning:</p>
+<ul>
+<li>at launch, 1 dualSTAKE token redeems for 1 <code>ALGO</code> + 0 ASA</li>
+<li>the ASA portion grows only after rewards begin accumulating</li>
+</ul>
+<p>In some cases a community intending to provide a generous <a href="./farming.html">farm</a> may choose to bootstrap a dualSTAKE token with a non-zero exchange rate for their ASA.</p>
 <p>This would impose a requirement to deposit some of the asset when minting the dualSTAKE token "at time zero", before rewards have started accumulating.</p>
+<p>See also: <a href="/create.html#3-initial-rate">Creating dualSTAKE contracts: Initial rate</a></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="fee-structure"><a class="header" href="#fee-structure">Fee Structure</a></h1>
 <p>Minting &amp; redeeming do not incur any platform fees. The only fees you will be charged during these operations are network transaction fees.</p>
 <p>Instead, fees are taken from consensus rewards, before they are swapped to the ASA.</p>
@@ -387,9 +432,9 @@ dualSTAKE works best when incentivized through <a href="./farming.html">dualSTAK
 <p>Platform and node operator fees are not paid immediately. Instead they remain in the contract escrow account until they are withdrawn by the respective operator.</p>
 <p>This serves multiple purposes:</p>
 <ul>
-<li>fewer required transaction fees</li>
-<li>contributing to the voting power of the dualSTAKE escrow address in consensus</li>
-<li>fewer taxable events for the platform and node runners</li>
+<li>Fewer required transaction fees</li>
+<li>Contributing to the voting power of the dualSTAKE escrow address in consensus</li>
+<li>In some jurisdictions, fewer taxable events for the platform and node runners</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="creating-dualstake-contracts"><a class="header" href="#creating-dualstake-contracts">Creating dualSTAKE contracts</a></h1>
 <p>Currently, creating dualSTAKE contracts is a manual process.</p>
@@ -439,7 +484,7 @@ dualSTAKE can be launched with low stake, but rewards will only work after the b
 <p>We typically handle your dualSTAKE logo creation, creating the contracts, and Pera verification submission for your dualSTAKE asset.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="farm-provision"><a class="header" href="#farm-provision">Farm provision</a></h1>
 <blockquote>
-<p><em>dualSTAKE farms offer your users a higher overall APR in return for choosing to stake on your dualSTAKE token over other appealing liquid staking options in the ecosystem.</em></p>
+<p><em>dualSTAKE farms offer your users a higher overall APR, incentivizing them to stake on your dualSTAKE token over other appealing staking options in the ecosystem.</em></p>
 </blockquote>
 <p>dualSTAKE farms can be configured to pay out an extra amount of the paired ASA for each block produced by dualSTAKE contracts.</p>
 <p>Farms are permissionless, immutable and extendable:</p>
@@ -595,7 +640,7 @@ dualSTAKE can be launched with low stake, but rewards will only work after the b
 <h3 id="code-to-hash-verification"><a class="header" href="#code-to-hash-verification">Code-to-hash Verification</a></h3>
 <p>For transparency, dualSTAKE contracts are built and hashed in a public Github workflow called <a href="https://github.com/MythFinance/dualSTAKE/actions/workflows/build.yml">Build and hash.</a></p>
 <p>The <strong>Build contract</strong> step will compile the pyteal to teal (<code>artifacts/approval.teal</code>), and then to AVM bytecode (<code>artifacts/approval.teal.tok</code>), and then hash the bytecode's 4K pages (<code>artifacts/hashes/approval.teal.tok.page1.sha512-256</code> and <code>artifacts/hashes/approval.teal.tok.page1.sha512-256</code>.) These are then committed to the repository and tagged with the aforementioned hashes.</p>
-<p>The 4KB program hashes in the <code>approval.teal.tok.pageX.sha512-256</code> files, as well as the output of the workflow action, should match the hashes in the smart conrtact storage as described above.</p>
+<p>The 4KB program hashes in the <code>approval.teal.tok.pageX.sha512-256</code> files, as well as the output of the workflow action, should match the hashes in the smart contract storage as described above.</p>
 <div class="warning">
 <p>In the interest of transparency, it should be noted that the built artifacts (including hashes) that are committed to the repo are <strong>not tamper-proof</strong>, as an admin could imitate the Github CI user/email and force push to overwrite. <strong>However, the workflow action logs are not possible to spoof</strong> without tampering with the committed build files. A stronger solution would make use of <a href="https://docs.github.com/en/actions/how-tos/secure-your-work/use-artifact-attestations/use-artifact-attestations">Github Artifact attestations</a>, but they do not support the SHA512-256 algorithm currently required by the dualSTAKE upgrade process.</p>
 </div>
